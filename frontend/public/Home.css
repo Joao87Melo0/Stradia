@@ -1,0 +1,8 @@
+main{
+    background-image: url('../img/BackgroundHome.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 1600px;
+    padding-top: 100px; 
+}

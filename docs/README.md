@@ -77,19 +77,8 @@ O projeto é desenvolvido utilizando as seguintes tecnologias:
    npm start
    ```
 
-## Contribuição
-Contribuições são bem-vindas! Para colaborar, siga estas etapas:
-1. Faça um fork do repositório.
-2. Crie uma branch para sua feature (`git checkout -b minha-feature`).
-3. Commit suas mudanças (`git commit -m 'Adiciona nova feature'`).
-4. Envie para a branch principal (`git push origin minha-feature`).
-5. Abra um Pull Request.
-
-## Licença
-Este projeto está sob a licença MIT. Sinta-se à vontade para utilizá-lo e modificá-lo conforme necessário.
-
 ## Contato
 Caso tenha dúvidas ou sugestões, entre em contato:
-- **Email**: contato@seudominio.com
-- **LinkedIn**: [Seu Nome](https://linkedin.com/in/seu-perfil)
-- **GitHub**: [Seu Usuário](https://github.com/seu-usuario)
+- **Email**: joao870melo@gmail.com
+- **LinkedIn**: [Joao Melo](https://linkedin.com/in/seu-perfil)
+- **GitHub**: [Joao87Melo0](https://github.com/Joao87Melo0/)
