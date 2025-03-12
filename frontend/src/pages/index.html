@@ -19,7 +19,7 @@
             <div class="navBarHeader-2metade">
                 <ul>
                     <li><img src="../../img/Icon Home.png" alt="IconNavbar" id="imgHome"><a href="#">Home</a></li>
-                    <li><img src="../../img/Icon Sobre.png" alt="IconNavbar" id="imgSobre"><a href="#">Sobre</a></li>
+                    <li><img src="../../img/Icon Sobre.png" alt="IconNavbar" id="imgSobre"><a href="#sobre">Sobre</a></li>
                     <li><img src="../../img/Icon Dashboard.png" alt="IconNavbar"><a href="#">Dashboard</a></li>
                 </ul>
                 <div id="iconPerfil">
@@ -29,37 +29,47 @@
             </div>
         </nav>
     </header>
-    <main>
+    <main id="homepage">
         <section class="titleStradia">
             <div>
                 <h1>Bem-Vindo ao</h1>
                 <h2>Stradia!</h2>
                 <p>"Análise integrada da pavimentação viária"</p>
                 <!--Fazer com que qunndo logado mude o botão-->
-                <div>
-                    <button>Registro</button>
-                    <button>Login</button>
+                <div class="btns-login">
+                    <button id="btn-register" class="btn-title"><img src="../../img/Icon Registro.png" alt="">Registro</button>
+                    <button id="btn-login" class="btn-title"><img src="../../img/Icon Login main.png" alt="">Login</button>
                 </div>
                 <!--Fazer com que qunndo logado mude o botão-->
             </div>
         </section>
-        <section class="sobreNos">
+        <section id="sobre" class="sobreNos">
             <h1>Sobre Nós</h1>
-            <h2>Quem somos?</h2>
-            <p>Somos um coletivo movido pela paixão de transformar a mobilidade nas imensas e desafiadoras estradas da Amazônia. Em um ambiente onde a tecnologia se encontra com a realidade cotidiana, buscamos, com inovação e sensibilidade, criar soluções que atendam de forma genuína às necessidades de quem percorre essas vias. Combinado com a inovação tecnológica, buscamos, de forma constante, desenvolver ferramentas que possam transformar a experiência nas estradas intermunicipais, tornando suas viagens mais seguras e eficientes.</p>
-            <h2>Propósito</h2>
-            <p>O projeto nasce do desejo de aprimorar a experiência de quem percorre as rodovias da região amazônica, servindo como uma ferramenta de suporte a indivíduos que necessitam realizar o tráfego intermunicipal. Dessa forma, por meio de uma plataforma web que integra aprendizado de máquina com dados de satélites de geoprocessamento, buscamos oferecer uma visão clara e precisa das condições das pavimentações, de maneira intuitiva.</p>
+            <div class="text-sobrenos">
+                <div class="arrow-sobrenos"><img src="../../img/Icon p.png" alt="arrow"></div>
+                <div>
+                    <h2>Quem somos?</h2>
+                    <p>Somos um coletivo movido pela paixão de transformar a mobilidade nas imensas e desafiadoras estradas da Amazônia. Em um ambiente onde a tecnologia se encontra com a realidade cotidiana, buscamos, com inovação e sensibilidade, criar soluções que atendam de forma genuína às necessidades de quem percorre essas vias. Combinado com a inovação tecnológica, buscamos, de forma constante, desenvolver ferramentas que possam transformar a experiência nas estradas intermunicipais, tornando suas viagens mais seguras e eficientes.</p>
+                </div>
+            </div>
+            <div class="text-sobrenos">
+                <div class="arrow-sobrenos"><img src="../../img/Icon p.png" alt="arrow"></div>
+                <div>
+                    <h2>Propósito</h2>
+                    <p>O projeto nasce do desejo de aprimorar a experiência de quem percorre as rodovias da região amazônica, servindo como uma ferramenta de suporte a indivíduos que necessitam realizar o tráfego intermunicipal. Dessa forma, por meio de uma plataforma web que integra aprendizado de máquina com dados de satélites de geoprocessamento, buscamos oferecer uma visão clara e precisa das condições das pavimentações, de maneira intuitiva.</p>
+                </div>
+            </div>
         </section>
-        <footer>
-            <section>
-                <div><img src="#" alt="..">Suporte</div>
-                <div>? Perguntas Frequentes</div>
-                <div><img src="#" alt="..">Contato</div>
-                <div><img src="#" alt="..">Social</div>
-            </section>
-            <section id="lineFooter"></section>
-            <section>© 2025 Stradia. Todos os direitos reservados.</section>
-        </footer>
     </main>
+    <footer>
+        <section class="text-footer">
+            <div><img src="#" alt="..">Suporte</div>
+            <div>? Perguntas Frequentes</div>
+            <div><img src="#" alt="..">Contato</div>
+            <div><img src="#" alt="..">Social</div>
+        </section>
+        <section id="lineFooter"></section>
+        <section>© 2025 Stradia. Todos os direitos reservados.</section>
+    </footer>
 </body>
 </html>
