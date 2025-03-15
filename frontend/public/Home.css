@@ -43,7 +43,7 @@ main{
     font-size: 5.2em;
     font-weight: 600;
     margin-bottom: -0.2em;
-    margin-left: -0.05em;
+    margin-left: -0.04em;
 }
 
 .titleStradia p{
@@ -117,8 +117,8 @@ main #btn-login{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 17em;
-    padding-top: 10em;
+    margin-top: 20%;
+    padding-top: 13%;
 }
 
 .sobreNos h1{
