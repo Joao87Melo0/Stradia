@@ -3,7 +3,7 @@
 main{
     background-image: url('../img/BackgroundHome.png');
     background-size: cover;
-    background-position: center;
+    background-position: center top;
     background-repeat: no-repeat;
     height: 1600px;
     margin-top: 70px; 
@@ -17,6 +17,7 @@ main{
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    margin-top: 50px;
 }
 
 .titleStradia div{
