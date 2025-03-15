@@ -6,9 +6,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../../public/header.css">
     <link rel="stylesheet" href="../../public/fonts.css">
+    <link rel="stylesheet" href="../../public/header.css">
     <link rel="stylesheet" href="../../public/Home.css">
+    <link rel="stylesheet" href="../../public/footer.css">
     <link rel="shortcut icon" href="../../img/favlogo.png" type="image/x-icon">
     <title>Stradia</title>
 </head>
@@ -18,14 +19,27 @@
             <a href="#"><img src="../../img/S_branco_sombra_01.png" alt="imagemLogo" id="logo"></a>
             <div class="navBarHeader-2metade">
                 <ul>
-                    <li><img src="../../img/Icon Home.png" alt="IconNavbar" id="imgHome"><a href="#">Home</a></li>
-                    <li><img src="../../img/Icon Sobre.png" alt="IconNavbar" id="imgSobre"><a href="#sobre">Sobre</a></li>
-                    <li><img src="../../img/Icon Dashboard.png" alt="IconNavbar"><a href="#">Dashboard</a></li>
+                    <a href="#">
+                    <li><img src="../../img/Icon Home.png" alt="IconNavbar" id="imgHome">
+                            Home
+                        </li>
+                    </a>
+                    <a href="#sobre">
+                    <li><img src="../../img/Icon Sobre.png" alt="IconNavbar" id="imgSobre">
+                            Sobre
+                        </li>
+                    </a>
+                    <a href="#">
+                    <li><img src="../../img/Icon Dashboard.png" alt="IconNavbar">
+                            Dashboard
+                        </li>
+                    </a>
                 </ul>
+                <a href="login/index.html">
                 <div id="iconPerfil">
-
-                <a href="#"><img src="../../img/Icon Login.png" alt="Icon"></a>
-            </div>
+                <img src="../../img/Icon Login.png" alt="Icon">
+                </div>
+                </a>
             </div>
         </nav>
     </header>
@@ -38,7 +52,7 @@
                 <!--Fazer com que qunndo logado mude o botão-->
                 <div class="btns-login">
                     <button id="btn-register" class="btn-title"><img src="../../img/Icon Registro.png" alt="">Registro</button>
-                    <button id="btn-login" class="btn-title"><img src="../../img/Icon Login main.png" alt="">Login</button>
+                    <button id="btn-login" class="btn-title" onclick="location.href='login/index.html'"><img src="../../img/Icon Login main.png" alt="">Login</button>
                 </div>
                 <!--Fazer com que qunndo logado mude o botão-->
             </div>
@@ -52,7 +66,7 @@
                     <p>Somos um coletivo movido pela paixão de transformar a mobilidade nas imensas e desafiadoras estradas da Amazônia. Em um ambiente onde a tecnologia se encontra com a realidade cotidiana, buscamos, com inovação e sensibilidade, criar soluções que atendam de forma genuína às necessidades de quem percorre essas vias. Combinado com a inovação tecnológica, buscamos, de forma constante, desenvolver ferramentas que possam transformar a experiência nas estradas intermunicipais, tornando suas viagens mais seguras e eficientes.</p>
                 </div>
             </div>
-            <div class="text-sobrenos">
+            <div class="text-sobrenos" id="text-sobrenos-proposito">
                 <div class="arrow-sobrenos"><img src="../../img/Icon p.png" alt="arrow"></div>
                 <div>
                     <h2>Propósito</h2>
@@ -63,13 +77,25 @@
     </main>
     <footer>
         <section class="text-footer">
-            <div><img src="#" alt="..">Suporte</div>
-            <div>? Perguntas Frequentes</div>
-            <div><img src="#" alt="..">Contato</div>
-            <div><img src="#" alt="..">Social</div>
+            <div>
+                <div><img src="../../img/Footer Suporte.png" alt=".."><a href="#">
+                    Suporte
+                </a></div>
+                <div>? <a href="#" id="perguntasFrequentes">
+                    Perguntas Frequentes
+                </a></div>
+            </div>
+            <div>
+                <div><img src="../../img/Footer Contato.png" alt=".."><a href="#">
+                    Contato
+                </a></div>
+                <div id="footerSocial"><img src="../../img/Footer Social.png" alt=".."><a href="#">
+                    Social
+                </a></div>
+            </div>
         </section>
         <section id="lineFooter"></section>
-        <section>© 2025 Stradia. Todos os direitos reservados.</section>
+        <section id="credits">© 2025 Stradia. Todos os direitos reservados.</section>
     </footer>
 </body>
 </html>

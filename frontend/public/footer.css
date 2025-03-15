@@ -1,0 +1,66 @@
+footer{
+    align-self: flex-end;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    color: white;
+    font-weight: 300;
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.text-footer{
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.text-footer>div{
+    display: flex;
+}
+
+.text-footer>div>div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 15px 10px 0px;
+}
+
+.text-footer a{
+    color: white;
+    text-decoration: none;
+    transition: 0.2s;
+    text-align: center;
+    padding-top: 1px;
+}
+
+#perguntasFrequentes{
+    margin-left: 5px;
+}
+
+#footerSocial{
+    margin-right: 4
+    
+    px;
+}
+
+.text-footer a:hover{
+    color: #0024B4;
+}
+
+.text-footer img{
+    height: 1em;
+    margin-right: 5px;
+}
+
+footer #lineFooter{
+    background-color: rgba(255, 255, 255, 0.438);
+    width: 60%;
+    height: 1px;
+}
+
+#credits{
+    font-size: 10px;
+}

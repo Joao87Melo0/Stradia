@@ -80,10 +80,22 @@ main .btn-title img{
 
 main #btn-register{
     color: #02135B;
+    cursor: pointer;
+    transition: 0.2s;
 }
 
-#btn-register img{
+#btn-register:hover{
+    background-color: #02135B;
+    color: white;
+}
+
+#btn-register img {
+    transition: filter 0.2s;
     width: 1.5em;
+}
+
+#btn-register:hover img {
+    filter: brightness(0) invert(1);
 }
 
 main #btn-login{
@@ -91,6 +103,12 @@ main #btn-login{
     margin-left: 20px;
     margin-right: 20px;
     background-color: #0124B4;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#btn-login:hover{
+    background-color: #000C3D;
 }
 
 /*sec-2*/
@@ -120,43 +138,25 @@ main #btn-login{
 }
 
 .text-sobrenos p{
-    font-weight: 100;
-    margin-bottom: 40px;
-    margin-top: 10px;
+    font-weight: 200;
+    margin: 10px 80px 0px 0px;
+    text-align: justify;
+}
+
+#text-sobrenos-proposito{
+    margin-top: 80px;
 }
 
 .sobreNos .arrow-sobrenos img{
     height: 40px;
 }
 
+.arrow-sobrenos{
+    margin-left: 40px;
+}
+
 .sobreNos h2{
     height: 40px;
     vertical-align: center;
     font-weight: 400;
-}
-
-/*Footer*/
-
-footer{
-    align-self: flex-end;
-    justify-self: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    color: white;
-    font-weight: 100;
-    font-size: 13px;
-    margin-bottom: 5px;
-}
-
-.text-footer{
-    display: flex;
-
-}
-
-footer #lineFooter{
-    background-color: rgba(255, 255, 255, 0.438);
-    width: 60%;
-    height: 1px;
 }

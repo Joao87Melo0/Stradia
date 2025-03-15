@@ -1,4 +1,12 @@
-.poppins-thin {
+*{
+  margin: 0;
+  padding: 0;
+  border: none;
+  font-family: poppins;
+  box-sizing: border-box;
+}
+  
+  .poppins-thin {
     font-family: "Poppins", serif;
     font-weight: 100;
     font-style: normal;
