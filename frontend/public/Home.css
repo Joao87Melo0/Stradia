@@ -176,7 +176,7 @@ main{
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
-    height: 2200px;
+    height: 2500px;
     width: 100%;
     margin-top: 70px; 
     display: flex;
@@ -189,7 +189,7 @@ main{
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    margin-top: 5%;
+    margin-top: 2%;
 }
 
 .titleStradia div{
