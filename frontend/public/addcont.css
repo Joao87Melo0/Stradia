@@ -1,0 +1,33 @@
+body{
+    background-image: url('../img/BackgroundLogin.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+header{
+    height: 10%;
+    display: flex;
+    align-items: center;
+}
+
+header button{
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #030F27;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 8px;
+    transition: 0.2s;
+}
+
+header button:hover{
+    background-color: #162B83;
+}
+
+header img{
+    height: 28px;
+    margin: 7px;
+}

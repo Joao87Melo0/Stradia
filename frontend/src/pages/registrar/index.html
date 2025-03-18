@@ -8,41 +8,42 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../../public/fonts.css">
     <link rel="shortcut icon" href="../../../img/favlogo.png" type="image/x-icon">
-    <link rel="stylesheet" href="../../../public/addcont.css">
     <link rel="stylesheet" href="../../../public/login.css">
-    <script src="https://www.gstatic.com/firebasejs/11.4.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/11.4.0/firebase-auth-compat.js"></script>
-    <script src="../../../js/configFirebase.js"></script>
-    <script src="../../../js/login.js"></script>
+    <link rel="stylesheet" href="../../../public/addcont.css">
     <title>Stradia</title>
 </head>
 <body>
     <header>
-        <button onclick="location.href='../index.html'"><img src="../../../img/Seta.png" alt=""></button>
+        <button onclick="window.history.back();"><img src="../../../img/Seta.png" alt=""></button>
     </header>
     <main>
         <section>
-            <form class="login-form">
-                <h2>Login</h2>
+            <form method="POST" class="login-form">
+                <h2>Registro</h2>
                 
                 <div class="input-group">
                     <input type="email" id="email" name="email" placeholder="E-mail" required>
+                </div>
+
+                <div class="input-group">
+                    <input type="text" id="name" name="name" placeholder="Nome completo" required>
+                </div>
+
+                <div class="input-group">
+                    <input type="text" id="user" name="user" placeholder="Usuário" required>
                 </div>
     
                 <div class="input-group">
                     <input type="password" id="password" name="password" placeholder="Senha" required>
                 </div>
-    
-                <div class="lembrarBox">
-                    <label><input type="checkbox" name="remember" id="lembrar">
-                        Lembrar-me
-                    </label>
-                    <a href="../recuperarSenha/index.html" id="esqueciSenha">Esqueci a senha</a>
+
+                <div class="input-group">
+                    <input type="password" id="password" name="password" placeholder="confirmar senha" required>
                 </div>
     
                 <div class="btnFinal">
-                    <button type="button" id="submitLogin" onclick="entrar()">Entrar</button>
-                    <p class="register-text">Não possui conta? <a href="../registrar/index.html">Registrar</a></p>
+                    <button type="submit">Cadastrar</button>
+                    <p class="register-text">Já Possui conta? <a href="../login/index.html"> Login</a></p>
                 </div>
                 </form>
         </section>
