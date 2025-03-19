@@ -93,3 +93,32 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
+//Esqueci minha senha
+
+document.addEventListener("DOMContentLoaded", function () {
+    const esqueciSenha = document.getElementById("esqueciSenha");
+
+    if (esqueciSenha) {
+        esqueciSenha.addEventListener("click", function (event) {
+            event.preventDefault(); // Impede o comportamento padrão do link
+            
+            const email = document.getElementById("email").value;
+
+            if (!email) {
+                alert("Por favor, insira seu e-mail antes de redefinir a senha.");
+                return;
+            }
+
+            firebase.auth().sendPasswordResetEmail(email)
+                .then(() => {
+                    window.location.href = "sucess.html";
+                })
+                .catch((error) => {
+                    console.error("Erro ao enviar e-mail:", error);
+                    alert("Erro ao enviar e-mail. Verifique se o e-mail está correto.");
+                });
+        });
+    }
+});
+

@@ -27,7 +27,7 @@ function redefinir() {
             window.location.href = "sucess.html"; // Redireciona para a página de sucesso ou login
         })
         .catch((error) => {
-           // console.error("Erro ao redefinir a senha:", error);
+           console.error("Erro ao redefinir a senha:", error);
             alert("Erro ao redefinir a senha. Tente novamente.");
         });
 }
