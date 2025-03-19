@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../../../public/login.css">
     <script src="https://www.gstatic.com/firebasejs/11.4.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/11.4.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore-compat.js"></script>
     <script src="../../../js/configFirebase.js"></script>
     <script src="../../../js/login.js"></script>
     <title>Stradia</title>
@@ -29,12 +30,13 @@
                     <input type="email" id="email" name="email" placeholder="E-mail" required>
                 </div>
     
-                <div class="input-group">
+                <div class="input-group" style="position: relative;">
                     <input type="password" id="password" name="password" placeholder="Senha" required>
-                </div>
+                    <span id="togglePassword" style="position: absolute; right: 15px; top: 35%; transform: translateY(-50%); cursor: pointer; color: white; font-size: 15px; opacity: 0.5;">🤫</span>
+                </div>              
     
                 <div class="lembrarBox">
-                    <label><input type="checkbox" name="remember" id="lembrar">
+                    <label><input style="cursor: pointer;" type="checkbox" name="remember" id="lembrar">
                         Lembrar-me
                     </label>
                     <a href="../recuperarSenha/index.html" id="esqueciSenha">Esqueci a senha</a>

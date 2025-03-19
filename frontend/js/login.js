@@ -1,4 +1,3 @@
-const passwordInput = document.getElementById("password");
 const submitLogin = document.getElementById("submitLogin")
 
 //VERIFICAR SE O CAMPO EMAIL ESTA PREENCHIDO 
@@ -76,4 +75,20 @@ document.addEventListener("DOMContentLoaded", function () {
                 console.log(passInput.value)
             });
     };
+});
+
+//Butao de senha
+document.addEventListener("DOMContentLoaded", function() {
+    const passwordInput = document.getElementById("password");
+    const togglePassword = document.getElementById("togglePassword");
+
+    togglePassword.addEventListener("click", function() {
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text"; // Mostra a senha
+            togglePassword.textContent = "😳"; // Ícone de olho aberto
+        } else {
+            passwordInput.type = "password"; // Oculta a senha
+            togglePassword.textContent = "🤫"; // Ícone de olho fechado
+        }
+    });
 });

@@ -10,6 +10,11 @@
     <link rel="shortcut icon" href="../../../img/favlogo.png" type="image/x-icon">
     <link rel="stylesheet" href="../../../public/login.css">
     <link rel="stylesheet" href="../../../public/addcont.css">
+    <script src="https://www.gstatic.com/firebasejs/11.4.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.4.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore-compat.js"></script>
+    <script src="../../../js/configFirebase.js"></script>
+    <script src="../../../js/register.js"></script>
     <title>Stradia</title>
 </head>
 <body>
@@ -33,16 +38,18 @@
                     <input type="text" id="user" name="user" placeholder="Usuário" required>
                 </div>
     
-                <div class="input-group">
+                <div class="input-group" style="position: relative;">
                     <input type="password" id="password" name="password" placeholder="Senha" required>
-                </div>
+                    <span id="togglePassword" style="position: absolute; right: 15px; top: 35%; transform: translateY(-50%); cursor: pointer; color: white; font-size: 15px; opacity: 0.5;">🤫</span>
+                </div>  
 
-                <div class="input-group">
-                    <input type="password" id="password" name="password" placeholder="confirmar senha" required>
+                <div class="input-group" style="position: relative;">
+                    <input type="password" id="confirmPass" name="password" placeholder="Confirmar senha" required>
+                    <span id="togglePassword" style="position: absolute; right: 15px; top: 35%; transform: translateY(-50%); cursor: pointer; color: white; font-size: 15px; opacity: 0.5;">🤫</span>
                 </div>
     
                 <div class="btnFinal">
-                    <button type="submit">Cadastrar</button>
+                    <button type="button" id="submitRegister" onclick="registrar()">Cadastrar</button>
                     <p class="register-text">Já Possui conta? <a href="../login/index.html"> Login</a></p>
                 </div>
                 </form>
