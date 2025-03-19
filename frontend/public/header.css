@@ -105,9 +105,31 @@ header{
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 5px 4px 7px 6px;
+    padding: 6px 4px 8px 6px;
     border-radius: 50%;
     transition: 0.2s;
+}
+
+#linkPerfil{
+    display: none;
+}
+
+#iconPerfil2{
+    background-color: rgba(217, 217, 217, 0.10);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px 10px 10px;
+    border-radius: 50%;
+    transition: 0.2s;
+}
+
+#iconPerfil2 img{
+    width: 23px;
+}
+
+#iconPerfil2:hover{
+    background-color: rgba(217, 217, 217, 0.151);
 }
 
 #iconPerfil:hover{
@@ -228,9 +250,31 @@ header{
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 5px 4px 7px 6px;
+    padding: 8px 4px 7px 7px;
     border-radius: 50%;
     transition: 0.2s;
+}
+
+#linkPerfil{
+    display: none;
+}
+
+#iconPerfil2{
+    background-color: rgba(217, 217, 217, 0.10);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 10px 10px 10px;
+    border-radius: 50%;
+    transition: 0.2s;
+}
+
+#iconPerfil2 img{
+    width: 30px;
+}
+
+#iconPerfil2:hover{
+    background-color: rgba(217, 217, 217, 0.151);
 }
 
 #iconPerfil:hover{
