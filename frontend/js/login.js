@@ -71,6 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
             })
             .catch(error => {
                 console.error("Erro de login:", error.message);
+                alert("E-mail ou senha incorreto! Por favor tente novamente");
                 console.log(emailInput.value)
                 console.log(passInput.value)
             });
