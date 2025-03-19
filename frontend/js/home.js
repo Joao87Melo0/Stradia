@@ -28,8 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 };
             }
         } else {
-            // Usuário não está logado
-            // Aqui você pode decidir o que fazer caso o usuário não esteja logado (por exemplo, mostrar os botões de login e registro).
+            console.log('O usuário não está logado')
         }
     });
 });

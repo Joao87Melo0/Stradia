@@ -32,6 +32,37 @@ document.addEventListener("DOMContentLoaded", function () {
     confirmPassInput.addEventListener("input", validarCampos);
 });
 
+//Butao de senha
+document.addEventListener("DOMContentLoaded", function() {
+    const passwordInput = document.getElementById("password");
+    const togglePassword = document.getElementById("togglePassword");
+
+    togglePassword.addEventListener("click", function() {
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text"; // Mostra a senha
+            togglePassword.textContent = "😳"; // Ícone de olho aberto
+        } else {
+            passwordInput.type = "password"; // Oculta a senha
+            togglePassword.textContent = "🤫"; // Ícone de olho fechado
+        }
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const passwordInput = document.getElementById("confirmPass");
+    const togglePassword = document.getElementById("togglePassword2");
+
+    togglePassword.addEventListener("click", function() {
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text"; // Mostra a senha
+            togglePassword.textContent = "😳"; // Ícone de olho aberto
+        } else {
+            passwordInput.type = "password"; // Oculta a senha
+            togglePassword.textContent = "🤫"; // Ícone de olho fechado
+        }
+    });
+});
+
 //Enviar para o firebase
 document.addEventListener("DOMContentLoaded", function () {
     const emailInput = document.getElementById("email");

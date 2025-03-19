@@ -85,6 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 });
 
+
 //Butao de senha
 document.addEventListener("DOMContentLoaded", function() {
     const passwordInput = document.getElementById("password");

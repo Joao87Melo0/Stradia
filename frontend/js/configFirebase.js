@@ -10,15 +10,7 @@ const firebaseConfig = {
 };
 
 // Inicializar Firebase
-if (!firebase.apps.length) {
     firebase.initializeApp(firebaseConfig);
-}
-
-
-firebase.initializeApp(firebaseConfig);
 
 // Inicializar Firestore
 const db = firebase.firestore();
-
-
-
