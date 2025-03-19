@@ -23,11 +23,11 @@ function redefinir() {
     // Usando o método do Firebase para redefinir a senha
     firebase.auth().confirmPasswordReset(oobCode, newPassword)
         .then(() => {
-            alert("Senha redefinida com sucesso!");
+            //alert("Senha redefinida com sucesso!");
             window.location.href = "sucess.html"; // Redireciona para a página de sucesso ou login
         })
         .catch((error) => {
-            console.error("Erro ao redefinir a senha:", error);
+           // console.error("Erro ao redefinir a senha:", error);
             alert("Erro ao redefinir a senha. Tente novamente.");
         });
 }
