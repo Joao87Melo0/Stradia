@@ -54,26 +54,33 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function () {
     const emailInput = document.getElementById("email");
     const passInput = document.getElementById("password");
+    const lembrar = document.getElementById("lembrar");  // Verificando o checkbox diretamente
+    const submitButton = document.getElementById("submitLogin");
 
-    firebase.initializeApp(firebaseConfig);
-
-    window.entrar = function () {  
-
+    // Adicionando o evento para o botão de login
+    window.entrar = function () {
         if (!emailInput.value || !passInput.value) {
             console.error("Preencha todos os campos!");
             return;
         }
 
-        firebase.auth().signInWithEmailAndPassword(emailInput.value, passInput.value)
+        // Verificando a persistência com base no checkbox "lembrar-me"
+        const persistenceType = lembrar.checked
+            ? firebase.auth.Auth.Persistence.LOCAL  // Mantém login após fechar o navegador
+            : firebase.auth.Auth.Persistence.SESSION;  // Mantém login até fechar a aba
+
+        firebase.auth().setPersistence(persistenceType)
+            .then(() => {
+                // Efetua o login
+                return firebase.auth().signInWithEmailAndPassword(emailInput.value, passInput.value);
+            })
             .then(response => {
-                console.log("Sucesso");
-                window.location.href = "../index.html";
+                console.log("Login bem-sucedido!");
+                window.location.href = "../index.html";  // Redireciona para a página inicial
             })
             .catch(error => {
                 console.error("Erro de login:", error.message);
                 alert("E-mail ou senha incorreto! Por favor tente novamente");
-                console.log(emailInput.value)
-                console.log(passInput.value)
             });
     };
 });
