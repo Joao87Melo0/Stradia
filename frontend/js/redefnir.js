@@ -11,7 +11,10 @@ function redefinir() {
     if (newPassword !== confirmPassword) {
         alert("As senhas não coincidem. Tente novamente.");
         return;
-    }
+    } else if(newPassword.length < 5){ 
+        alert("❌ A senha deve ter pelo menos 5 caracteres!");
+        return;
+    } 
 
     const oobCode = getParameterByName('oobCode'); // Pegando o token da URL
 
@@ -39,26 +42,26 @@ document.addEventListener("DOMContentLoaded", function() {
 
     togglePassword.addEventListener("click", function() {
         if (passwordInput.type === "password") {
-            passwordInput.type = "text"; // Mostra a senha
-            togglePassword.textContent = "😳"; // Ícone de olho aberto
+            passwordInput.type = "text"; 
+            togglePassword.innerText = "visibility"; 
         } else {
-            passwordInput.type = "password"; // Oculta a senha
-            togglePassword.textContent = "🤫"; // Ícone de olho fechado
+            passwordInput.type = "password"; 
+            togglePassword.innerText = "visibility_off"; 
         }
     });
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-    const passwordInput = document.getElementById("password2");
+    const passwordInput = document.getElementById("confirmPass");
     const togglePassword = document.getElementById("togglePassword2");
 
     togglePassword.addEventListener("click", function() {
         if (passwordInput.type === "password") {
-            passwordInput.type = "text"; // Mostra a senha
-            togglePassword.textContent = "😳"; // Ícone de olho aberto
+            passwordInput.type = "text"; 
+            togglePassword.innerText = "visibility"; 
         } else {
-            passwordInput.type = "password"; // Oculta a senha
-            togglePassword.textContent = "🤫"; // Ícone de olho fechado
+            passwordInput.type = "password"; 
+            togglePassword.innerText = "visibility_off"; 
         }
     });
 });
@@ -66,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function() {
 //BOTAO ENTRAR
 document.addEventListener("DOMContentLoaded", function () {
     const passwordInput = document.getElementById("password");
-    const passwordInput2 = document.getElementById("password2");
+    const passwordInput2 = document.getElementById("confirmPass");
     const submitButton = document.getElementById("submitLogin");
     submitButton.disabled = true; // Desativa o botão
     submitButton.style.opacity = "0.5"; 

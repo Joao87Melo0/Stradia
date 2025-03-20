@@ -93,11 +93,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
     togglePassword.addEventListener("click", function() {
         if (passwordInput.type === "password") {
-            passwordInput.type = "text"; // Mostra a senha
-            togglePassword.textContent = "😳"; // Ícone de olho aberto
+            passwordInput.type = "text"; 
+            togglePassword.innerText = "visibility"; 
         } else {
-            passwordInput.type = "password"; // Oculta a senha
-            togglePassword.textContent = "🤫"; // Ícone de olho fechado
+            passwordInput.type = "password"; 
+            togglePassword.innerText = "visibility_off"; 
         }
     });
 });
@@ -106,6 +106,15 @@ document.addEventListener("DOMContentLoaded", function() {
 
 document.addEventListener("DOMContentLoaded", function () {
     const esqueciSenha = document.getElementById("esqueciSenha");
+    const emailDisplay = document.getElementById("emailDisplay");
+
+    function censurarEmail(email) {
+        const [user, domain] = email.split("@");
+        if (user.length > 4) {
+            return `${user.slice(0, 2)}**${user.slice(-2)}@${domain}`;
+        }
+        return `${user[0]}**@${domain}`; // Se for um nome curto, oculta quase tudo
+    }
 
     if (esqueciSenha) {
         esqueciSenha.addEventListener("click", function (event) {
@@ -120,6 +129,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
             firebase.auth().sendPasswordResetEmail(email)
                 .then(() => {
+                    if (emailDisplay) {
+                        emailDisplay.innerHTML = `E-mail de recuperação enviado para <br> ${censurarEmail(email)}`;
+                    }
                     window.location.href = "sucess.html";
                 })
                 .catch((error) => {
@@ -129,4 +141,3 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
-

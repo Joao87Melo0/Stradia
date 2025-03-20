@@ -32,18 +32,18 @@ document.addEventListener("DOMContentLoaded", function () {
     confirmPassInput.addEventListener("input", validarCampos);
 });
 
-//Butao de senha
+//Botao de senha
 document.addEventListener("DOMContentLoaded", function() {
     const passwordInput = document.getElementById("password");
     const togglePassword = document.getElementById("togglePassword");
 
     togglePassword.addEventListener("click", function() {
         if (passwordInput.type === "password") {
-            passwordInput.type = "text"; // Mostra a senha
-            togglePassword.textContent = "😳"; // Ícone de olho aberto
+            passwordInput.type = "text"; 
+            togglePassword.innerText = "visibility"; 
         } else {
-            passwordInput.type = "password"; // Oculta a senha
-            togglePassword.textContent = "🤫"; // Ícone de olho fechado
+            passwordInput.type = "password"; 
+            togglePassword.innerText = "visibility_off"; 
         }
     });
 });
@@ -54,11 +54,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
     togglePassword.addEventListener("click", function() {
         if (passwordInput.type === "password") {
-            passwordInput.type = "text"; // Mostra a senha
-            togglePassword.textContent = "😳"; // Ícone de olho aberto
+            passwordInput.type = "text"; 
+            togglePassword.innerText = "visibility"; 
         } else {
-            passwordInput.type = "password"; // Oculta a senha
-            togglePassword.textContent = "🤫"; // Ícone de olho fechado
+            passwordInput.type = "password"; 
+            togglePassword.innerText = "visibility_off"; 
         }
     });
 });
@@ -88,6 +88,11 @@ document.addEventListener("DOMContentLoaded", function () {
         if (!email || !name || !username || !password || !confirmPassword) {
             alert("❌ Preencha todos os campos!");
             return;
+            
+        } else if(password.length < 5){ 
+                alert("❌ A senha deve ter pelo menos 5 caracteres!");
+                return;
+            
         } else if (password !== confirmPassword) {
             alert("❌ As senhas não coincidem!");
             return;
@@ -107,11 +112,15 @@ document.addEventListener("DOMContentLoaded", function () {
             })
             .then(() => {
                 alert("✅ Conta criada com sucesso!");
-                window.location.href = "../login/index.html"; // Redireciona para login
+                window.location.href = "../login/index.html"; 
             })
             .catch((error) => {
+                if (error.code === "auth/email-already-in-use") {
+                    alert("❌ Este e-mail já está sendo usado!");
+                } else {
+                    alert(`Erro: ${error.message}`);
+                }
                 console.error("❌ Erro ao cadastrar:", error.message);
-                alert(`Erro: ${error.message}`);
             });
     }
 });
