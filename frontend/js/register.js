@@ -89,8 +89,8 @@ document.addEventListener("DOMContentLoaded", function () {
             alert("❌ Preencha todos os campos!");
             return;
             
-        } else if(password.length < 5){ 
-                alert("❌ A senha deve ter pelo menos 5 caracteres!");
+        } else if(password.length < 6){ 
+                alert("❌ A senha deve ter pelo menos 6 caracteres!");
                 return;
             
         } else if (password !== confirmPassword) {
