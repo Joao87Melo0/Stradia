@@ -6,7 +6,7 @@ function getParameterByName(name) {
 // Função para redefinir a senha
 function redefinir() {
     const newPassword = document.getElementById("password").value;
-    const confirmPassword = document.getElementById("password2").value;
+    const confirmPassword = document.getElementById("confirmPass").value;
 
     if (newPassword !== confirmPassword) {
         alert("As senhas não coincidem. Tente novamente.");
