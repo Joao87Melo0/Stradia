@@ -14,7 +14,7 @@
     <script src="https://www.gstatic.com/firebasejs/11.4.0/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore-compat.js"></script>
     <script src="../../js/configFirebase.js"></script>
-    <script src="../../js/home.js"></script>
+    <script src="../../js/home.js" defer></script>
     <link rel="shortcut icon" href="../../img/favlogo.png" type="image/x-icon">
     <title>Stradia</title>
 </head>
@@ -23,37 +23,44 @@
         <nav class="navBarHeader">
             <a href="#"><img src="../../img/S_branco_sombra_01.png" alt="imagemLogo" id="logo"></a>
             <div class="navBarHeader-2metade">
-                <ul>
+                <ul class="nav-list">
                     <a href="#">
-                    <li><img src="../../img/Icon Home.png" alt="IconNavbar" id="imgHome">
+                        <li><img src="../../img/Icon Home.png" alt="IconNavbar" id="imgHome">
                             Home
                         </li>
                     </a>
                     <a href="#sobre">
                     <li><img src="../../img/Icon Sobre.png" alt="IconNavbar" id="imgSobre">
-                            Sobre
-                        </li>
+                        Sobre
+                    </li>
                     </a>
                     <a href="#">
-                    <li><img src="../../img/Icon Dashboard.png" alt="IconNavbar">
+                        <li><img src="../../img/Icon Dashboard.png" alt="IconNavbar">
                             Dashboard
                         </li>
                     </a>
                 </ul>
-                <a id="linkLogin" href="login/index.html">
+            <a id="linkLogin" href="login/index.html">
                 <div id="iconPerfil">
-                <img src="../../img/Icon Login.png" alt="Icon">
+                    <img src="../../img/Icon Login.png" alt="Icon">
                 </div>
-                </a>
-                <a id="linkPerfil" href="login/index.html">
+            </a>
+            <a id="linkPerfil" href="login/index.html">
                 <div id="iconPerfil2">
-                <img src="../../img/Icon Login main.png" alt="Icon">
+                    <img src="../../img/Icon Login main.png" alt="Icon">
                 </div>
-                </a>
+            </a>
+            <!--Menu Hambúrguer-->
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
             </div>
-        </nav>
-    </header>
-    <main id="homepage">
+            <!--Menu Hambúrguer-->
+        </div>
+    </nav>
+</header>
+<main id="homepage">
         <section class="titleStradia">
             <div>
                 <h1>Bem-Vindo ao</h1>
