@@ -3,9 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../../public/fonts.css">
+    <link rel="stylesheet" href="../../../public/header.css">
+    <link rel="stylesheet" href="../../../public/dashboard.css">
+    <link rel="stylesheet" href="../../../public/footer.css">
+    <script src="https://www.gstatic.com/firebasejs/11.4.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.4.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore-compat.js"></script>
+    <script src="../../../js/configFirebase.js"></script>
+    <script src="../../../js/home.js" defer></script>
+    <script src="../../../js/faq.js" defer></script>
+    <link rel="shortcut icon" href="../../../img/favlogo.png" type="image/x-icon">
+    <title>Stradia</title>
 </head>
 <body>
-    <h1>Dashboard</h1>
+    <header>
+        <nav class="navBarHeader">
+            <a href="../index.html"><img src="../../../img/S_branco_sombra_01.png" alt="imagemLogo" id="logo"></a>
+            <div class="navBarHeader-2metade">
+                <ul class="nav-list">
+                    <a href="../index.html">
+                        <li><img src="../../../img/Icon Home.png" alt="IconNavbar" id="imgHome">
+                            Home
+                        </li>
+                    </a>
+                    <a href="../index.html#sobre">
+                    <li><img src="../../../img/Icon Sobre.png" alt="IconNavbar" id="imgSobre">
+                        Sobre
+                    </li>
+                    </a>
+                    <a href="../dashboard/index.html">
+                        <li><img src="../../../img/Icon Dashboard.png" alt="IconNavbar">
+                            Dashboard
+                        </li>
+                    </a>
+                </ul>
+            <a id="linkLogin" href="../login/index.html">
+                <div id="iconPerfil">
+                    <img src="../../../img/Icon Login.png" alt="Icon">
+                </div>
+            </a>
+            <a id="linkPerfil" href="../login/index.html">
+                <div id="iconPerfil2">
+                    <img src="../../../img/Icon Login main.png" alt="Icon">
+                </div>
+            </a>
+            <!--Menu Hambúrguer-->
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <!--Menu Hambúrguer-->
+        </div>
+    </nav>
+</header>
+<main id="dashboard">
+        <h1>Bem vindo, Username!</h1>
+        <section class="sec-1-dash">
+            <div class="search">
+                <input type="search" name="search" id="searchdashboard" placeholder="Pesquisar via">
+                <button><img src="../../../img/filtroDashboard.png" alt="">Filtros</button>
+            </div>
+            <div>
+                <button><img src="../../../img/Historico.png" alt="">Histórico</button>
+            </div>
+        </section>
+        <section class="sec-2-recomenda">
+            <div><h3>Recomendações</h3></div>
+            <div class="recomendaEstrada">
+                <h1>Opções de estradas</h1>
+                <h2>/A fazer/</h2>
+            </div>
+        </section>
+    <footer id="footer">
+        <section class="text-footer">
+            <div>
+                <div><img src="../../../img/Footer Suporte.png" alt=".."><a href="#">
+                    Suporte
+                </a></div>
+                <div>? <a href="../faq/index.html" id="perguntasFrequentes">
+                    Perguntas Frequentes
+                </a></div>
+            </div>
+            <div>
+                <div><img src="../../../img/Footer Contato.png" alt=".."><a href="#">
+                    Contato
+                </a></div>
+                <div id="footerSocial"><img src="../../../img/Footer Social.png" alt=".."><a href="#">
+                    Social
+                </a></div>
+            </div>
+        </section>
+        <section id="lineFooter"></section>
+        <section id="credits">© 2025 Stradia. Todos os direitos reservados.</section>
+    </footer>
+</main>
 </body>
 </html>
