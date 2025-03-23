@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../../public/fonts.css">
+    <link rel="stylesheet" href="../../../public/header.css">
+    <link rel="stylesheet" href="../../../public/faq.css">
+    <link rel="stylesheet" href="../../../public/footer.css">
+    <script src="https://www.gstatic.com/firebasejs/11.4.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.4.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore-compat.js"></script>
+    <script src="../../../js/configFirebase.js"></script>
+    <script src="../../../js/home.js" defer></script>
+    <script src="../../../js/faq.js" defer></script>
+    <link rel="shortcut icon" href="../../../img/favlogo.png" type="image/x-icon">
+    <title>Stradia</title>
+</head>
+<body>
+    <header>
+        <nav class="navBarHeader">
+            <a href="../index.html"><img src="../../../img/S_branco_sombra_01.png" alt="imagemLogo" id="logo"></a>
+            <div class="navBarHeader-2metade">
+                <ul class="nav-list">
+                    <a href="../index.html">
+                        <li><img src="../../../img/Icon Home.png" alt="IconNavbar" id="imgHome">
+                            Home
+                        </li>
+                    </a>
+                    <a href="../index.html#sobre">
+                    <li><img src="../../../img/Icon Sobre.png" alt="IconNavbar" id="imgSobre">
+                        Sobre
+                    </li>
+                    </a>
+                    <a href="#">
+                        <li><img src="../../../img/Icon Dashboard.png" alt="IconNavbar">
+                            Dashboard
+                        </li>
+                    </a>
+                </ul>
+            <a id="linkLogin" href="../login/index.html">
+                <div id="iconPerfil">
+                    <img src="../../../img/Icon Login.png" alt="Icon">
+                </div>
+            </a>
+            <a id="linkPerfil" href="../login/index.html">
+                <div id="iconPerfil2">
+                    <img src="../../../img/Icon Login main.png" alt="Icon">
+                </div>
+            </a>
+            <!--Menu Hambúrguer-->
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <!--Menu Hambúrguer-->
+        </div>
+    </nav>
+</header>
+<main id="faq-container">
+        <h1>Perguntas Frequentes:</h1>
+        <div class="buttons">
+            <button onclick="location.href='#'" id="especial"><img src="../../../img/faq-conta.png" alt="">Conta</button>
+            <button onclick="location.href='faq2.html'"><img src="../../../img/faq-seguranca.png" alt="">Seguraça</button>
+            <button onclick="location.href='faq3.html'"><img src="../../../img/faq-recursos.png" alt="">Recursos</button>
+        </div>
+        <div class="faq">
+            <button class="faq-question">Esqueci minha senha, como posso recuperá-la?</button>
+            <div class="faq-answer">
+                <p>Se você esqueceu sua senha, basta clicar em "Esqueci minha senha" na tela de login. Em seguida, insira o seu e-mail cadastrado e nós enviaremos um link para você redefinir a sua senha. Caso não receba o e-mail, verifique sua caixa de spam ou lixo eletrônico.</p>
+            </div>
+        </div>
+        <div class="faq">
+            <button class="faq-question">Como atualizar meus dados pessoais?</button>
+            <div class="faq-answer">
+                <p>Para atualizar seus dados pessoais, faça login na sua conta e acesse a seção "Minha Conta" ou "Configurações". Lá, você poderá alterar suas informações de contato, endereço, e outras preferências. Não se esqueça de salvar as alterações após atualizar seus dados.</p>
+            </div>
+        </div>
+        <div class="faq">
+            <button class="faq-question">Como posso sair da minha conta?</button>
+            <div class="faq-answer">
+                <p>Para sair da sua conta, clique no ícone de perfil no canto superior direito da página e selecione a opção ‘’Opções de Perfil’’, e clique na opção ‘’Sair’’ em vermelho.</p>
+            </div>
+        </div>
+        <div class="faq">
+            <button class="faq-question">Como posso criar uma conta no site?</button>
+            <div class="faq-answer">
+                <p>Para criar uma conta, clique em "Cadastrar" ou "Criar Conta" na página inicial. Preencha os campos solicitados com seu nome, e-mail, senha e outras informações necessárias. Após concluir o cadastro, você receberá um e-mail de confirmação para ativar sua conta. Basta seguir as instruções do e-mail para finalizar o processo.</p>
+            </div>
+        </div>    
+    <footer>
+        <section class="text-footer">
+            <div>
+                <div><img src="../../../img/Footer Suporte.png" alt=".."><a href="#">
+                    Suporte
+                </a></div>
+                <div>? <a href="../faq/index.html" id="perguntasFrequentes">
+                    Perguntas Frequentes
+                </a></div>
+            </div>
+            <div>
+                <div><img src="../../../img/Footer Contato.png" alt=".."><a href="#">
+                    Contato
+                </a></div>
+                <div id="footerSocial"><img src="../../../img/Footer Social.png" alt=".."><a href="#">
+                    Social
+                </a></div>
+            </div>
+        </section>
+        <section id="lineFooter"></section>
+        <section id="credits">© 2025 Stradia. Todos os direitos reservados.</section>
+    </footer>
+</main>
+</body>
+</html>

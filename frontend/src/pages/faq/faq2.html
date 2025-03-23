@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../../public/fonts.css">
+    <link rel="stylesheet" href="../../../public/header.css">
+    <link rel="stylesheet" href="../../../public/faq.css">
+    <link rel="stylesheet" href="../../../public/footer.css">
+    <script src="https://www.gstatic.com/firebasejs/11.4.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.4.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore-compat.js"></script>
+    <script src="../../../js/configFirebase.js"></script>
+    <script src="../../../js/home.js" defer></script>
+    <script src="../../../js/faq.js" defer></script>
+    <link rel="shortcut icon" href="../../../img/favlogo.png" type="image/x-icon">
+    <title>Stradia</title>
+</head>
+<body>
+    <header>
+        <nav class="navBarHeader">
+            <a href="../index.html"><img src="../../../img/S_branco_sombra_01.png" alt="imagemLogo" id="logo"></a>
+            <div class="navBarHeader-2metade">
+                <ul class="nav-list">
+                    <a href="../index.html">
+                        <li><img src="../../../img/Icon Home.png" alt="IconNavbar" id="imgHome">
+                            Home
+                        </li>
+                    </a>
+                    <a href="../index.html#sobre">
+                    <li><img src="../../../img/Icon Sobre.png" alt="IconNavbar" id="imgSobre">
+                        Sobre
+                    </li>
+                    </a>
+                    <a href="#">
+                        <li><img src="../../../img/Icon Dashboard.png" alt="IconNavbar">
+                            Dashboard
+                        </li>
+                    </a>
+                </ul>
+            <a id="linkLogin" href="../login/index.html">
+                <div id="iconPerfil">
+                    <img src="../../../img/Icon Login.png" alt="Icon">
+                </div>
+            </a>
+            <a id="linkPerfil" href="../login/index.html">
+                <div id="iconPerfil2">
+                    <img src="../../../img/Icon Login main.png" alt="Icon">
+                </div>
+            </a>
+            <!--Menu Hambúrguer-->
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <!--Menu Hambúrguer-->
+        </div>
+    </nav>
+</header>
+<main id="faq-container">
+        <h1>Perguntas Frequentes:</h1>
+        <div class="buttons">
+            <button onclick="location.href='index.html'"><img src="../../../img/faq-conta.png" alt="">Conta</button>
+            <button onclick="location.href='#'" id="especial"><img src="../../../img/faq-seguranca.png" alt="">Seguraça</button>
+            <button onclick="location.href='faq3.html'"><img src="../../../img/faq-recursos.png" alt="">Recursos</button>
+        </div>
+        <div class="faq">
+            <button class="faq-question">Como sei se minha conta foi hackeada</button>
+            <div class="faq-answer">
+                <p>Se você notar alguma atividade suspeita em sua conta, como alterações de dados sem seu consentimento, compras ou transações que você não fez, ou se você não conseguir acessar sua conta devido a uma mudança de senha, pode ser um sinal de que sua conta foi hackeada. Em caso de dúvidas, entre em contato com o suporte técnico imediatamente.</p>
+            </div>
+        </div>
+        <div class="faq">
+            <button class="faq-question">Como posso saber se a conexão ao site é seguro</button>
+            <div class="faq-answer">
+                <p>Para garantir que a conexão ao site seja segura, verifique se o endereço começa com "https://" e se há um ícone de cadeado ao lado do URL na barra de endereço do navegador. Isso indica que a comunicação entre o seu dispositivo e o site está criptografada e segura.</p>
+            </div>
+        </div>
+        <div class="faq">
+            <button class="faq-question">Como posso garantir que minha conta está segura</button>
+            <div class="faq-answer">
+                <p>Use senhas fortes e únicas (misturando letras maiúsculas, minúsculas, números e caracteres especiais). Habilite a autenticação de dois fatores (2FA) sempre que possível. Não compartilhe suas credenciais com outras pessoas. Verifique regularmente sua conta em busca de atividades suspeitas. </p>
+            </div>
+        </div>
+        <div class="faq">
+            <button class="faq-question">O que fazer se minha conta for acessada sem permição</button>
+            <div class="faq-answer">
+                <p>Altere sua senha imediatamente para algo mais seguro.
+                    Revise a atividade da conta para verificar quaisquer ações suspeitas. Entre em contato com o suporte do site ou plataforma para relatar o incidente e solicitar ajuda.
+                    Ative a autenticação de dois fatores (2FA) se ainda não estiver ativada.Se possível, saia de todas as sessões de dispositivos e redes não autorizados.</p>
+            </div>
+        </div>    
+    <footer>
+        <section class="text-footer">
+            <div>
+                <div><img src="../../../img/Footer Suporte.png" alt=".."><a href="#">
+                    Suporte
+                </a></div>
+                <div>? <a href="../faq/index.html" id="perguntasFrequentes">
+                    Perguntas Frequentes
+                </a></div>
+            </div>
+            <div>
+                <div><img src="../../../img/Footer Contato.png" alt=".."><a href="#">
+                    Contato
+                </a></div>
+                <div id="footerSocial"><img src="../../../img/Footer Social.png" alt=".."><a href="#">
+                    Social
+                </a></div>
+            </div>
+        </section>
+        <section id="lineFooter"></section>
+        <section id="credits">© 2025 Stradia. Todos os direitos reservados.</section>
+    </footer>
+</main>
+</body>
+</html>

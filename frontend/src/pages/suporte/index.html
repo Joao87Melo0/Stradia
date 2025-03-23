@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../../public/fonts.css">
+    <link rel="stylesheet" href="../../../public/header.css">
+    <link rel="stylesheet" href="../../../public/suporte.css">
+    <link rel="stylesheet" href="../../../public/footer.css">
+    <script src="https://www.gstatic.com/firebasejs/11.4.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.4.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore-compat.js"></script>
+    <script src="../../../js/configFirebase.js"></script>
+    <script src="../../../js/home.js" defer></script>
+    <link rel="shortcut icon" href="../../../img/favlogo.png" type="image/x-icon">
+    <title>Stradia</title>
+</head>
+<body>
+    <header>
+        <nav class="navBarHeader">
+            <a href="../index.html"><img src="../../../img/S_branco_sombra_01.png" alt="imagemLogo" id="logo"></a>
+            <div class="navBarHeader-2metade">
+                <ul class="nav-list">
+                    <a href="../index.html">
+                        <li><img src="../../../img/Icon Home.png" alt="IconNavbar" id="imgHome">
+                            Home
+                        </li>
+                    </a>
+                    <a href="../index.html#sobre">
+                    <li><img src="../../../img/Icon Sobre.png" alt="IconNavbar" id="imgSobre">
+                        Sobre
+                    </li>
+                    </a>
+                    <a href="#">
+                        <li><img src="../../../img/Icon Dashboard.png" alt="IconNavbar">
+                            Dashboard
+                        </li>
+                    </a>
+                </ul>
+            <a id="linkLogin" href="../login/index.html">
+                <div id="iconPerfil">
+                    <img src="../../../img/Icon Login.png" alt="Icon">
+                </div>
+            </a>
+            <a id="linkPerfil" href="../login/index.html">
+                <div id="iconPerfil2">
+                    <img src="../../../img/Icon Login main.png" alt="Icon">
+                </div>
+            </a>
+            <!--Menu Hambúrguer-->
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <!--Menu Hambúrguer-->
+        </div>
+    </nav>
+</header>
+<main id="homepage">
+    <section class="sec-1">
+        <h1>Suporte ao Usuário</h1>
+        <h2>Qual sua necessidade?</h2>
+    </section>
+    <Section class="sec-2">
+        <div>
+            <a href="#" id="box-suporte1">
+                <div class="box-suporte">
+                    <img src="../../../img/Icon1-boxSuporte.png" alt="">
+                    <h3>Reportar Problema</h3>
+                </div>
+            </a>
+            <a href="../faq/index.html" id="box-suporte2">
+                <div class="box-suporte">
+                    <img src="../../../img/Icon2-boxSuporte.png" alt="">
+                    <h3>Perguntas Frequentes</h3>
+                </div>
+            </a>
+            <a href="#" id="box-suporte3">
+                <div class="box-suporte">
+                    <img src="../../../img/Icon3-boxSuporte.png" alt="">
+                    <h3>Redes Sociais</h3>
+                </div>
+            </a>
+        </div>
+        <div>
+            <a href="#" id="box-suporte4">
+                <div class="box-suporte">
+                    <img src="../../../img/Icon4-boxSuporte.png" alt="">
+                    <h3>Informações</h3>
+                </div>
+            </a>
+            <a href="#" id="box-suporte5">
+                <div class="box-suporte">
+                    <img src="../../../img/Icon5-boxSuporte.png" alt="">
+                    <h3>Institucional</h3>
+                </div>
+            </a>
+            <a href="#" id="box-suporte6">
+                <div class="box-suporte">
+                    <img src="../../../img/Icon6-boxSuporte.png" alt="">
+                    <h3>Funcionalidades</h3>
+                </div>
+            </a>
+        </div>
+    </Section>
+    <footer>
+        <section class="text-footer">
+            <div>
+                <div><img src="../../../img/Footer Suporte.png" alt=".."><a href="#">
+                    Suporte
+                </a></div>
+                <div>? <a href="../faq/index.html" id="perguntasFrequentes">
+                    Perguntas Frequentes
+                </a></div>
+            </div>
+            <div>
+                <div><img src="../../../img/Footer Contato.png" alt=".."><a href="#">
+                    Contato
+                </a></div>
+                <div id="footerSocial"><img src="../../../img/Footer Social.png" alt=".."><a href="#">
+                    Social
+                </a></div>
+            </div>
+        </section>
+        <section id="lineFooter"></section>
+        <section id="credits">© 2025 Stradia. Todos os direitos reservados.</section>
+    </footer>
+</main>
+</body>
+</html>
