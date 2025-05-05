@@ -1,0 +1,22 @@
+{
+  "name": "stradiaprojectweb",
+  "version": "1.0.0",
+  "description": "## Descrição Este projeto utiliza algoritmos de machine learning para identificar e avaliar a degradação de estradas a partir de imagens de satélite. O foco principal é a região Norte do Brasil, especialmente a Amazônia, onde as condições das rodovias são mais críticas. A avaliação considera aspectos como pavimentação e permite a visualização das imagens processadas.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0",
+    "mongoose": "^8.14.0",
+    "multer": "^1.4.5-lts.2"
+  },
+  "devDependencies": {}
+}

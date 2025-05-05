@@ -128,7 +128,7 @@ main #btn-login{
 
 .sobreNos h1{
     margin-bottom: 0.8em;
-    color: #0024B4;
+    color: white;
     text-shadow: 0px 4px 6px rgba(0, 34, 255, 0.25);
     text-align: center;
     font-family: Poppins;
@@ -191,7 +191,7 @@ footer{
 @media (max-width: 1024px) and (min-width: 768px) {
 
     main{
-        background-image: url('../img/BackgroundHome.png');
+        background-image: url('../img/backgroundHomeNew.png');
         background-size: cover;
         background-position: center top;
         background-repeat: no-repeat;
@@ -201,156 +201,6 @@ footer{
         display: flex;
         flex-direction: column;
     }
-
-/*sec-1*/
-.titleStradia{
-    height: 28%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    margin-top: 3%;
-}
-
-.titleStradia div{
-    width: 45%;
-}
-
-.titleStradia h1{
-    color: #FFF;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-family: Poppins;
-    font-size: 3.4em;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    margin-bottom: -0.6em;
-}
-
-.titleStradia h2{
-    color: #0024B4;
-    text-shadow: 0px 4px 6px rgba(0, 34, 255, 0.25);
-    font-family: Poppins;
-    font-size: 6.6em;
-    font-weight: 600;
-    margin-bottom: -0.2em;
-    margin-left: -0.03em;
-}
-
-.titleStradia p{
-    color: #FFF;
-    font-family: Poppins;
-    font-size: 1.2em;
-    font-style: normal;
-    font-weight: 100;
-    line-height: normal;
-}
-
-main .btns-login{
-    display: flex;
-    justify-content: flex-end;
-    width: 370px;
-    margin-top: 20px;
-}
-
-main .btn-title{
-    width: 140px;
-    height: 50px;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 500;
-    font-size: 1.2em;
-    border-radius: 28px;
-}
-
-main .btn-title img{
-    width: 1.1em;
-    margin-right: 0.5em;
-}
-
-main #btn-register{
-    color: #02135B;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-#btn-register:hover{
-    background-color: #02135B;
-    color: white;
-}
-
-#btn-register img {
-    transition: filter 0.2s;
-    width: 1.5em;
-}
-
-#btn-register:hover img {
-    filter: brightness(0) invert(1);
-}
-
-main #btn-login{
-    color: white;
-    margin-left: 20px;
-    margin-right: 20px;
-    background-color: #0124B4;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-#btn-login:hover{
-    background-color: #000C3D;
-}
-
-/*sec-2*/
-.sobreNos{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20%;
-    padding-top: 13%;
-}
-
-.sobreNos h1{
-    margin-bottom: 0.8em;
-    color: #0024B4;
-    text-shadow: 0px 4px 6px rgba(0, 34, 255, 0.25);
-    text-align: center;
-    font-family: Poppins;
-    font-size: 55px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-}
-
-.sobreNos .text-sobrenos{
-    display: flex;
-    color: white;
-}
-
-.text-sobrenos p{
-    font-weight: 200;
-    margin: 10px 80px 0px 0px;
-    text-align: justify;
-}
-
-#text-sobrenos-proposito{
-    margin-top: 4em;
-}
-
-.sobreNos .arrow-sobrenos img{
-    height: 40px;
-}
-
-.arrow-sobrenos{
-    margin-left: 40px;
-}
-
-.sobreNos h2{
-    height: 40px;
-    vertical-align: center;
-    font-weight: 400;
-}
 
 }
 
@@ -358,7 +208,7 @@ main #btn-login{
 /*Pc hd*/
 @media (max-width: 1700px) and (min-width: 1024px) {
     main{
-        background-image: url('../img/BackgroundHome.png');
+        background-image: url('../img/backgroundHomeNew.png');
         background-size: cover;
         background-position: center top;
         background-repeat: no-repeat;
@@ -394,7 +244,7 @@ main #btn-login{
 }
 
 .titleStradia h2{
-    color: #0024B4;
+    color: #2448D7;
     text-shadow: 0px 4px 6px rgba(0, 34, 255, 0.25);
     font-family: Poppins;
     font-size: 6.6em;
@@ -480,7 +330,7 @@ main #btn-login{
 
 .sobreNos h1{
     margin-bottom: 0.8em;
-    color: #0024B4;
+    color: white;
     text-shadow: 0px 4px 6px rgba(0, 34, 255, 0.25);
     text-align: center;
     font-family: Poppins;
@@ -526,7 +376,7 @@ main #btn-login{
 @media (min-width: 1700px) {
 
 main{
-    background-image: url('../img/BackgroundHome.png');
+    background-image: url('../img/backgroundHomeNew.png');
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
@@ -562,7 +412,7 @@ main{
 }
 
 .titleStradia h2{
-    color: #0024B4;
+    color: #2448D7;
     text-shadow: 0px 4px 6px rgba(0, 34, 255, 0.25);
     font-family: Poppins;
     font-size: 7.8em;
@@ -648,7 +498,7 @@ main #btn-login{
 
 .sobreNos h1{
     margin-bottom: 0.8em;
-    color: #0024B4;
+    color: white;
     text-shadow: 0px 4px 6px rgba(0, 34, 255, 0.25);
     text-align: center;
     font-family: Poppins;

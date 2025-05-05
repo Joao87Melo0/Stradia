@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../../../public/fonts.css">
+    <link rel="stylesheet" href="../../../../public/header.css">
+    <link rel="stylesheet" href="../../../../public/estrada.css">
+    <link rel="stylesheet" href="../../../../public/footer.css">
+    <script src="https://www.gstatic.com/firebasejs/11.4.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.4.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore-compat.js"></script>
+    <script src="../../../../js/configFirebase.js"></script>
+    <script src="../../../../js/home.js" defer></script>
+    <script src="../../../../js/dashboard.js" defer></script>
+    <script src="../../../../js/estrada/am090.js" defer></script>
+    <link rel="shortcut icon" href="../../../../img/favlogo.png" type="image/x-icon">
+    <title>Stradia</title>
+</head>
+<body>
+    <header>
+        <nav class="navBarHeader">
+            <a href="../../index.html"><img src="../../../../img/S_branco_sombra_01.png" alt="imagemLogo" id="logo"></a>
+            <div class="navBarHeader-2metade">
+                <ul class="nav-list">
+                    <a href="../index.html">
+                        <li><img src="../../../../img/Icon Home.png" alt="IconNavbar" id="imgHome">
+                            Home
+                        </li>
+                    </a>
+                    <a href="../../index.html#sobre">
+                    <li><img src="../../../../img/Icon Sobre.png" alt="IconNavbar" id="imgSobre">
+                        Sobre
+                    </li>
+                    </a>
+                    <a href="../../dashboard/index.html">
+                        <li><img src="../../../../img/Icon Dashboard.png" alt="IconNavbar">
+                            Dashboard
+                        </li>
+                    </a>
+                </ul>
+            <a id="linkLogin" href="../../login/index.html">
+                <div id="iconPerfil">
+                    <img src="../../../../img/Icon Login.png" alt="Icon">
+                </div>
+            </a>
+            <a id="linkPerfil" href="../../login/index.html">
+                <div id="iconPerfil2">
+                    <img src="../../../../img/Icon Login main.png" alt="Icon">
+                </div>
+            </a>
+            <!--Menu Hambúrguer-->
+            <div class="mobile-menu">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <!--Menu Hambúrguer-->
+        </div>
+    </nav>
+</header>
+<main id="dashboard">
+        <div class="back">
+            <button onclick="location.href='../index.html'"><img src="../../../../img/Seta.png" alt=""></button>
+        </div>
+        <section class="sec-1-dash">
+            <div class="search">
+                <input type="search" name="search" id="searchdashboard" placeholder="Pesquisar via">
+            </div>
+        </section>
+        <section class="sec-2-recomenda">
+            <div class="api">
+                <iframe id="mapa" loading="lazy" allowfullscreen></iframe>
+            </div>
+            <div class="sec-2">
+                <div class="condicao">
+                    <h3>Condição da Via</h3>
+                </div>
+                <div>
+                    <h3>Dados</h3>
+                </div>
+            </div>
+        </section>
+        
+    <footer id="footer">
+        <section class="text-footer">
+            <div>
+                <div><img src="../../../../img/Footer Suporte.png" alt=".."><a href="../../suporte/index.html">
+                    Suporte
+                </a></div>
+                <div>? <a href="../../faq/index.html" id="perguntasFrequentes">
+                    Perguntas Frequentes
+                </a></div>
+            </div>
+            <div>
+                <div><img src="../../../../img/Footer Contato.png" alt=".."><a href="#">
+                    Contato
+                </a></div>
+                <div id="footerSocial"><img src="../../../../img/Footer Social.png" alt=".."><a href="#">
+                    Social
+                </a></div>
+            </div>
+        </section>
+        <section id="lineFooter"></section>
+        <section id="credits">© 2025 Stradia. Todos os direitos reservados.</section>
+    </footer>
+</main>
+</body>
+</html>

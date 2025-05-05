@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-//Butao de senha
+//Botao de senha
 document.addEventListener("DOMContentLoaded", function() {
     const passwordInput = document.getElementById("password");
     const togglePassword = document.getElementById("togglePassword");

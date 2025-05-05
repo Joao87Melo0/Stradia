@@ -21,10 +21,7 @@ html, body {
         flex-direction: column;
         background-color: #030b1a;
     }
-
-
 }
-
 
 /*Tablets*/
 @media (max-width: 1024px) and (min-width: 768px) {
@@ -40,11 +37,7 @@ html, body {
         display: flex;
         flex-direction: column;
     }
-
-
-
 }
-
 
 /*Pc hd*/
 @media (max-width: 1700px) and (min-width: 1024px) {
@@ -53,13 +46,12 @@ html, body {
         background-size: cover; /* Ajusta sem distorção */
         background-position: center;
         background-repeat: no-repeat;
-        min-height: 850px;
+        min-height: 730px;
         width: 100%;
         margin-top: 80px;
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: space-between;
     }
 
     body{
@@ -69,13 +61,175 @@ html, body {
         height: 100%;
     }
 
-    #dashboard>h1{
+    main>h1{
         color: white;
-        font-size: 100px;
+        font-size: 50px;
+    }
+
+    .sec-1-dash button{
+        cursor: pointer;
+    }
+
+    .search input{
+        width: 530px;
+        height: 40px;
+        border-radius: 50px;
+        background: rgba(120, 133, 190, 0.45);
+        box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.25);
+        padding-left: 25px;
+        font-size: 16px;
+        color: white;
+    }
+
+    .search input::placeholder{
+        color: rgba(255, 255, 255, 0.50);
     }
     
-}
+    .search input:-webkit-autofill,
+    .search input:-webkit-autofill:hover,
+    .search input:-webkit-autofill:focus {
+        background-color: #7885BE73 !important;
+        -webkit-text-fill-color: white !important;  /* Mantém a cor do texto */
+        transition: background-color 5000s ease-in-out 0s; /* Evita mudança repentina de cor */
+    }
 
+    main .sec-1-dash{
+        margin-top: 30px;
+        margin-bottom: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    main .search{
+        display: flex;
+        align-items: center;
+        padding-left: 120px;
+        margin-bottom: 20px;
+    }
+
+    main .search button{
+        margin-left: 20px;
+    }
+
+    main .sec-1-dash button{
+        background-color: #ffffffc4;
+        display: flex;
+        color: #0124B4;
+        justify-content: center;
+        align-items: center;
+        padding: 5px 20px;
+        height: 30px;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+    
+    main .sec-1-dash button img{
+        height: 20px;
+        filter: brightness(0) saturate(100%) invert(14%) sepia(36%) saturate(746%) hue-rotate(197deg) brightness(90%) contrast(95%);
+    }
+
+    
+    main .sec-2-recomenda{
+        width: 100%;
+        height: 350px;
+        margin-bottom: 100px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    main .sec-2-recomenda h3{
+        color: white;
+        margin: 0px 0px 10px 15px;
+        font-size: 22px;
+    }
+
+    main .recomendaEstrada{
+        background-color: #0F1F61;
+        height: 100%;
+        color: white;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    main .sec-2-recomenda .estrada{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0px 30px 0px 30px;
+    }
+    
+    main .sec-2-recomenda .recomendaEstrada img {
+        flex-shrink: 0;
+        width: 300px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    main .sec-2-recomenda .recomendaEstrada button {
+        background-color: #ffffffc4;
+        color: #0124B4;
+        box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.25);
+        font-size: 12px;
+        padding: 5px 20px;
+        border-radius: 5px;
+        margin-top: 10px;
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    main .sec-2-recomenda .arrows {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .arrows button{
+        font-size: 24px !important; 
+        padding: 0px 0px 0px 0px;
+        margin: 0px 15px;
+    }
+
+    main .sec-2-recomenda .arrow-left, .arrow-right {
+        background-color: rgba(0, 0, 0, 0.3);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    main .sec-2-recomenda .arrow-left:hover, .arrow-right:hover, .recomendaEstrada button:hover{
+        transform: scale(1.1);
+    }
+
+    main .sec-2-recomenda .arrow-left {
+        left: 10px;
+    }
+
+    main .sec-2-recomenda .arrow-right {
+        right: 10px;
+    }
+
+    .estradas-container {
+        display: flex;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        padding: 20px 0;
+    }    
+
+    #footer{
+        justify-self: flex-end !important;
+    }
+}
 
 /*Pc full hd*/
 @media (min-width: 1700px) {
@@ -101,17 +255,22 @@ html, body {
 
     main>h1{
         color: white;
-        font-size: 80px;
+        font-size: 55px;
+    }
+
+    .sec-1-dash button{
+        cursor: pointer;
     }
 
     .search input{
-        width: 730px;
-        height: 60px;
+        width: 530px;
+        height: 40px;
         border-radius: 50px;
         background: rgba(120, 133, 190, 0.45);
         box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.25);
         padding-left: 25px;
-        font-size: 24px;
+        font-size: 16px;
+        color: white;
     }
 
     .search input::placeholder{
@@ -127,8 +286,8 @@ html, body {
     }
 
     main .sec-1-dash{
-        margin-top: 60px;
-        margin-bottom: 150px;
+        margin-top: 30px;
+        margin-bottom: 50px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -146,9 +305,9 @@ html, body {
     }
 
     main .sec-1-dash button{
-        background-color: #0124B4;
+        background-color: #ffffffc4;
         display: flex;
-        color: white;
+        color: #0124B4;
         justify-content: center;
         align-items: center;
         padding: 5px 20px;
@@ -159,6 +318,7 @@ html, body {
 
     main .sec-1-dash button img{
         height: 20px;
+        filter: brightness(0) saturate(100%) invert(14%) sepia(36%) saturate(746%) hue-rotate(197deg) brightness(90%) contrast(95%);
     }
 
     main .recomendaEstrada{
@@ -166,25 +326,99 @@ html, body {
         height: 100%;
         color: white;
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
         justify-content: center;
     }
 
     main .sec-2-recomenda{
         width: 100%;
-        height: 350px;
-        margin-bottom: 200px;
+        height: 400px;
+        margin-top: 90px;
+        margin-bottom: 180px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    main .sec-2-recomenda .estrada{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0px 30px 20px 30px;
+    }
+
+    main .sec-2-recomenda .recomendaEstrada img {
+        flex-shrink: 0;
+        width: 380px;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    main .sec-2-recomenda .recomendaEstrada button {
+        background-color: #ffffffc4;
+        color: #0124B4;
+        box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.25);
+        font-size: 16px;
+        padding: 5px 20px;
+        border-radius: 5px;
+        margin-top: 10px;
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.3s ease;
     }
 
     main .sec-2-recomenda h3{
         color: white;
-        font-size: 32px;
-        margin: 10px;
+        margin: 0px 0px 10px 15px;
+        font-size: 22px;
     }
+
+    main .sec-2-recomenda .arrows {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .arrows button{
+        font-size: 24px !important; 
+        padding: 0px 0px 0px 0px;
+        margin: 0px 15px;
+    }
+
+    main .sec-2-recomenda .arrow-left, .arrow-right {
+        background-color: rgba(0, 0, 0, 0.3);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    main .sec-2-recomenda .arrow-left:hover, .arrow-right:hover, .recomendaEstrada button:hover{
+        transform: scale(1.1);
+    }
+
+    main .sec-2-recomenda .arrow-left {
+        left: 10px;
+    }
+
+    main .sec-2-recomenda .arrow-right {
+        right: 10px;
+    }
+
+    .estradas-container {
+        display: flex;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        padding: 20px 0;
+    }    
 
     #footer{
         justify-self: flex-end !important;
     }
-    
 }

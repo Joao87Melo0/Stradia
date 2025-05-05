@@ -7,7 +7,7 @@ html, body {
 
 /*Mobile*/
 @media (max-width: 767px){
-    main{
+    main {
         background-color: aqua;
         height: 100vh;
         background-image: url('../img/BackgroundHomeMobile.png');
@@ -21,15 +21,11 @@ html, body {
         flex-direction: column;
         background-color: #030b1a;
     }
-
-
 }
-
 
 /*Tablets*/
 @media (max-width: 1024px) and (min-width: 768px) {
-
-    main{
+    main {
         background-image: url('../img/BackgroundHome.png');
         background-size: cover;
         background-position: center top;
@@ -40,17 +36,13 @@ html, body {
         display: flex;
         flex-direction: column;
     }
-
-
-
 }
-
 
 /*Pc hd*/
 @media (max-width: 1700px) and (min-width: 1024px) {
     main {
         background-image: url('../img/BackgroundSuporte.png');
-        background-size: cover; /* Ajusta sem distorção */
+        background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
         min-height: 850px;
@@ -62,10 +54,7 @@ html, body {
         justify-content: space-between;
     }
 
-    body{
-        height: 100%;
-    }
-    html{
+    body, html {
         height: 100%;
     }
 
@@ -79,27 +68,27 @@ html, body {
         transition: transform 0.5s ease-in-out;
     }
 
-    #faq-container h1{
+    #faq-container h1 {
         color: white;
-        
+        margin-bottom: 0; /* Removido o espaçamento inferior */
     }
 
-    #faq-container .buttons{
+    #faq-container .buttons {
         display: flex;
         justify-content: space-around;
         width: 40%;
     }
 
-    .buttons button{
+    .buttons button {
         cursor: pointer;
-        width: 100px;
-        height: 30px;
-        background-color: #0F1F61;
+        width: 150px;
+        height: 32px;
+        background-color: #ffffffc4;
         filter: drop-shadow(0px 4px 15px rgba(0, 0, 0, 0.25));
-        color: #FFF;
+        color: #0F1F61;
         text-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
         font-family: Poppins;
-        font-size: 12px;
+        font-size: 16px;
         font-style: normal;
         font-weight: 400;
         line-height: normal;
@@ -110,36 +99,49 @@ html, body {
         justify-content: center;
     }
 
-    #especial{
-        background-color: #48537E;
+    #especial {
+        background-color: #0F1F61;
+        color: white;
     }
 
-    .buttons button:hover{
-        background-color: #48537E;
+    #especial img{
+        filter: none;
     }
 
-    .buttons button img{
+    .buttons button:hover {
+        background-color: #48537E;
+        color: white;
+    }
+
+    .buttons button:hover img{
+        filter: none;
+    }
+
+    .buttons button img {
         height: 15px;
         margin-right: 4px;
+        filter: brightness(0) saturate(100%) invert(14%) sepia(36%) saturate(746%) hue-rotate(197deg) brightness(90%) contrast(95%);
+        transition: 0.3s;
     }
-    
+
     .faq {
         width: 60%;
-        background-color: #0F1F61; /* Azul escuro */
+        background-color: #ffffffc4;
         border-radius: 10px;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
         overflow: hidden;
         transition: all 0.3s ease-in-out;
         position: relative;
-        opacity: 1; /* Garante que todas aparecem inicialmente */
+        opacity: 1;
         transform: scale(1);
+        margin-bottom: 0; /* Removido o espaçamento inferior */
     }
-    
+
     .faq-question {
         width: 100%;
         background: none;
         border: none;
-        color: white;
+        color: #0F1F61;
         font-size: 18px;
         padding: 15px;
         text-align: left;
@@ -148,77 +150,92 @@ html, body {
         justify-content: space-between;
         align-items: center;
         transition: background 0.3s ease-in-out;
+        margin-top: 0; /* Removido o espaçamento superior */
+        margin-bottom: 0; /* Removido o espaçamento inferior */
     }
-    
+
     .faq-question:hover {
-        background-color: #0B143E;
-    }
-    
-    .faq-answer {
-        display: none;
-        padding: 15px;
+        background-color: #0F1F61;
         color: white;
-        background-color: #0B143E; /* Diferencia do fundo */
-        border-top: 1px solid rgba(255, 255, 255, 0.2);
-        opacity: 0;
+    }
+
+    .faq-answer {
+        padding: 0 20px;
+        color: white;
+        background-color: #0B143E;
         max-height: 0;
         overflow: hidden;
-        transition: opacity 0.5s ease-in-out, max-height 0.5s ease-in-out;
-        padding-bottom: 100px;
+        opacity: 0;
+        transition: max-height 1.2s ease, opacity 1.2s ease, margin-top 0.5s ease;
+        margin-top: 0;
     }
-    
-    /* Ícones de seta */
+
+    /* Ícones de seta verticais */
     .faq-question::after {
-        content: "▼";
+        content: "˅";
         font-size: 18px;
         transition: transform 0.3s ease-in-out;
     }
-    
+
     .faq.open .faq-question::after {
-        content: "▲";
-        transform: rotate(180deg);
+        content: "˄";
+        transform: rotate(0deg);
     }
-    
-    /* Efeito ao abrir */
-    .faq.open {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 80%;
-        z-index: 10;
-    }
-    
+
     .faq.open .faq-answer {
-        display: block;
-        opacity: 1;
-        max-height: 300px; /* Ajuste conforme necessário */
+        animation: expand 1.2s forwards;
+        padding: 10px;
     }
-    
-    /* Mantém as outras perguntas visíveis, mas suaviza ao abrir uma */
+
+    .faq.closing .faq-answer {
+        animation: collapse 1.2s forwards;
+        margin-top: 0;
+    }
+
+    @keyframes expand {
+        from {
+            max-height: 0;
+            opacity: 0;
+        }
+        to {
+            max-height: 500px;
+            opacity: 1;
+        }
+    }
+
+    @keyframes collapse {
+        from {
+            max-height: 500px;
+            opacity: 1;
+        }
+        to {
+            max-height: 0;
+            opacity: 0;
+        }
+    }
+
     .faq:not(.open) {
-        opacity: 1; /* Agora todas continuam visíveis */
+        opacity: 1;
         pointer-events: all;
         transform: scale(1);
     }
-    
+
     .faq-container.open .faq:not(.open) {
         opacity: 0;
         pointer-events: none;
         transform: scale(0.9);
     }
-    
-    
-    main>footer{
+
+    main > footer {
         justify-self: flex-end !important;
     }
 }
-
 
 /*Pc full hd*/
 @media (min-width: 1700px) {
     main {
         background-image: url('../img/BackgroundSuporte.png');
-        background-size: cover; /* Ajusta sem distorção */
+        background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
         min-height: 1080px;
@@ -230,10 +247,7 @@ html, body {
         justify-content: space-between;
     }
 
-    body{
-        height: 100%;
-    }
-    html{
+    body, html {
         height: 100%;
     }
 
@@ -247,25 +261,25 @@ html, body {
         transition: transform 0.5s ease-in-out;
     }
 
-    #faq-container h1{
+    #faq-container h1 {
         color: white;
         font-size: 40px;
-        
+        margin-bottom: 0; /* Removido o espaçamento inferior */
     }
 
-    #faq-container .buttons{
+    #faq-container .buttons {
         display: flex;
         justify-content: space-around;
         width: 40%;
     }
 
-    .buttons button{
+    .buttons button {
         cursor: pointer;
         width: 130px;
         height: 40px;
-        background-color: #0F1F61;
+        background-color: #ffffffc4;
         filter: drop-shadow(0px 4px 15px rgba(0, 0, 0, 0.25));
-        color: #FFF;
+        color: #0F1F61;
         text-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
         font-family: Poppins;
         font-size: 18px;
@@ -279,36 +293,49 @@ html, body {
         justify-content: center;
     }
 
-    #especial{
-        background-color: #48537E;
+    #especial {
+        background-color: #0F1F61;
+        color: white;
     }
 
-    .buttons button:hover{
-        background-color: #48537E;
+    #especial img{
+        filter: none;
     }
 
-    .buttons button img{
-        height: 20px;
+    .buttons button:hover {
+        background-color: #48537E;
+        color: white;
+    }
+
+    .buttons button:hover img{
+        filter: none;
+    }
+
+    .buttons button img {
+        height: 15px;
         margin-right: 4px;
+        filter: brightness(0) saturate(100%) invert(14%) sepia(36%) saturate(746%) hue-rotate(197deg) brightness(90%) contrast(95%);
+        transition: 0.3s;
     }
-    
+
     .faq {
         width: 60%;
-        background-color: #0F1F61; /* Azul escuro */
+        background-color: #ffffffc4;
         border-radius: 10px;
         box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
         overflow: hidden;
         transition: all 0.3s ease-in-out;
         position: relative;
-        opacity: 1; /* Garante que todas aparecem inicialmente */
+        opacity: 1;
         transform: scale(1);
+        margin-bottom: 0; /* Removido o espaçamento inferior */
     }
-    
+
     .faq-question {
         width: 100%;
         background: none;
         border: none;
-        color: white;
+        color: #0F1F61;
         font-size: 18px;
         padding: 15px;
         text-align: left;
@@ -317,67 +344,83 @@ html, body {
         justify-content: space-between;
         align-items: center;
         transition: background 0.3s ease-in-out;
+        margin-top: 0; /* Removido o espaçamento superior */
+        margin-bottom: 0; /* Removido o espaçamento inferior */
     }
-    
+
     .faq-question:hover {
-        background-color: #0B143E;
-    }
-    
-    .faq-answer {
-        display: none;
-        padding: 15px;
+        background-color: #0F1F61;
         color: white;
-        background-color: #0B143E; /* Diferencia do fundo */
-        border-top: 1px solid rgba(255, 255, 255, 0.2);
-        opacity: 0;
+    }
+
+    .faq-answer {
+        padding: 0 20px;
+        color: white;
+        background-color: #0B143E;
         max-height: 0;
         overflow: hidden;
-        transition: opacity 0.5s ease-in-out, max-height 0.5s ease-in-out;
-        padding-bottom: 100px;
+        opacity: 0;
+        transition: max-height 1.2s ease, opacity 1.2s ease, margin-top 0.5s ease;
+        margin-top: 0;
     }
-    
-    /* Ícones de seta */
+
+    /* Ícones de seta verticais */
     .faq-question::after {
-        content: "▼";
+        content: "˅";
         font-size: 18px;
         transition: transform 0.3s ease-in-out;
     }
-    
+
     .faq.open .faq-question::after {
-        content: "▲";
-        transform: rotate(180deg);
+        content: "˄";
+        transform: rotate(0deg);
     }
-    
-    /* Efeito ao abrir */
-    .faq.open {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 80%;
-        z-index: 10;
-    }
-    
+
     .faq.open .faq-answer {
-        display: block;
-        opacity: 1;
-        max-height: 300px; /* Ajuste conforme necessário */
+        animation: expand 1.2s forwards;
+        padding: 10px;
     }
-    
-    /* Mantém as outras perguntas visíveis, mas suaviza ao abrir uma */
+
+    .faq.closing .faq-answer {
+        animation: collapse 1.2s forwards;
+        margin-top: 0;
+    }
+
+    @keyframes expand {
+        from {
+            max-height: 0;
+            opacity: 0;
+        }
+        to {
+            max-height: 500px;
+            opacity: 1;
+        }
+    }
+
+    @keyframes collapse {
+        from {
+            max-height: 500px;
+            opacity: 1;
+        }
+        to {
+            max-height: 0;
+            opacity: 0;
+        }
+    }
+
     .faq:not(.open) {
-        opacity: 1; /* Agora todas continuam visíveis */
+        opacity: 1;
         pointer-events: all;
         transform: scale(1);
     }
-    
+
     .faq-container.open .faq:not(.open) {
         opacity: 0;
         pointer-events: none;
         transform: scale(0.9);
     }
-    
-    
-    main>footer{
+
+    main > footer {
         justify-self: flex-end !important;
     }
 }
