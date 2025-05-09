@@ -47,67 +47,108 @@
     });
 
 
-    //Foto de perfil
-    document.addEventListener("DOMContentLoaded", function () {
-        const perfilDiv = document.querySelector(".circle-perfil");
-        const perfilImg = perfilDiv.querySelector("img");
-        const perfilTexto = perfilDiv.querySelector("p");
-    
-        // Criar input de upload oculto
-        const inputFile = document.createElement("input");
-        inputFile.type = "file";
-        inputFile.accept = "image/*";
-        inputFile.style.display = "none";
-        document.body.appendChild(inputFile);
-    
-        // Ao clicar na div, simula clique no input
-        perfilDiv.addEventListener("click", () => {
-            inputFile.click();
-        });
-    
-        inputFile.addEventListener("change", async (e) => {
-            const file = e.target.files[0];
-            if (!file) return;
-    
+//Foto de perfil
+document.addEventListener("DOMContentLoaded", async () => {
+    const perfilDiv = document.querySelector('.circle-perfil');
+
+    if (!perfilDiv) {
+        console.error("Div de perfil não encontrada.");
+        return;
+    }
+
+    // Cria dinamicamente o input de arquivo
+    const fileInput = document.createElement('input');
+    fileInput.type = 'file';
+    fileInput.accept = 'image/*';
+    fileInput.style.display = 'none';
+    document.body.appendChild(fileInput);
+
+    // Verifica se o usuário está logado e já tem imagem no Firestore
+    firebase.auth().onAuthStateChanged(async (user) => {
+        if (user) {
+            const uid = user.uid;
+            const userRef = firebase.firestore().collection('users').doc(uid);
+
+            try {
+                const doc = await userRef.get();
+                if (doc.exists && doc.data().imageUrl) {
+                    const imageUrl = doc.data().imageUrl;
+
+                    perfilDiv.style.backgroundImage = `url(${imageUrl})`;
+                    perfilDiv.style.backgroundSize = 'cover';
+                    perfilDiv.style.backgroundPosition = 'center';
+                    perfilDiv.style.borderRadius = '50%';        
+                    perfilDiv.style.width = '170px';
+                    perfilDiv.style.height = '170px';
+
+                    const img = perfilDiv.querySelector('img');
+                    if (img) img.remove();
+
+                    const p = perfilDiv.querySelector('p');
+                    if (p) p.textContent = 'Trocar foto+';
+                    p.style.left ='20px';
+                    p.style.top ='70px';
+                }
+            } catch (error) {
+                console.error("Erro ao buscar imagem no Firestore:", error);
+            }
+        }
+    });
+
+    // Quando clicar na div, abre o seletor de arquivos
+    perfilDiv.addEventListener('click', () => {
+        fileInput.click();
+    });
+
+    // Quando selecionar um arquivo
+    fileInput.addEventListener('change', async (e) => {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        const imageUrl = URL.createObjectURL(file); // Para exibir localmente
+        console.log("Imagem local carregada:", imageUrl);
+
+        try {
             const user = firebase.auth().currentUser;
             if (!user) {
-                alert("Usuário não está logado.");
+                console.error("Usuário não autenticado");
                 return;
             }
-    
-            const storageRef = firebase.storage().ref(`perfil/${user.uid}`);
-            try {
-                // Upload da imagem
-                await storageRef.put(file);
-                const url = await storageRef.getDownloadURL();
-    
-                // Salvar ou atualizar a URL no Firestore
-                const db = firebase.firestore();
-                await db.collection("users").doc(user.uid).set({
-                    UserImg: url  // Usando o campo 'UserImg' conforme seu código
-                }, { merge: true });
-    
-                // Atualizar interface com a nova imagem e texto
-                perfilImg.src = url;
-                perfilTexto.textContent = "Alterar Imagem"; // Mudando o texto para "Alterar Imagem"
-            } catch (error) {
-                console.error("Erro ao fazer upload da imagem:", error);
-                alert("Erro ao enviar imagem. Tente novamente.");
-            }
-        });
-    
-        // Verificar se já existe imagem no Firestore ao carregar a página
-        firebase.auth().onAuthStateChanged(async (user) => {
-            if (user) {
-                const db = firebase.firestore();
-                const doc = await db.collection("users").doc(user.uid).get();
-                if (doc.exists && doc.data().UserImg) {  // Acessando o campo UserImg
-                    perfilImg.src = doc.data().UserImg;
-                    perfilTexto.textContent = "Alterar Imagem"; // Atualizando o texto
-                }
-            }
-        });
+
+            const uid = user.uid;
+            const userRef = firebase.firestore().collection('users').doc(uid);
+
+            // Salva a URL local (ou futuramente uma URL real de storage, se usar)
+            console.log("Salvando URL no Firestore:", imageUrl);
+            await userRef.set({ imageUrl: imageUrl }, { merge: true }).catch(error => {
+                console.error("Erro ao criar o campo imageUrl no Firestore:", error);
+            });
+
+            // Aplica a imagem de fundo redonda
+            perfilDiv.style.backgroundImage = `url(${imageUrl})`;
+            perfilDiv.style.backgroundSize = 'cover';
+            perfilDiv.style.backgroundPosition = 'center';
+            perfilDiv.style.borderRadius = '50%';
+            perfilDiv.style.width = '170px';
+            perfilDiv.style.height = '170px';
+
+
+            // Remove a imagem e altera o texto do <p>
+            const img = perfilDiv.querySelector('img');
+            if (img) img.remove();
+
+            const p = perfilDiv.querySelector('p');
+            if (p) p.textContent = 'Trocar foto+';
+            p.style.left ='20px';
+            p.style.top ='70px';
+
+            console.log("URL da imagem salva e aplicada com sucesso!");
+
+        } catch (error) {
+            console.error("Erro geral ao salvar imagem:", error);
+        }
     });
+});
     
 //Deslogar
 
