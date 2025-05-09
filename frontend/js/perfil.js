@@ -56,14 +56,12 @@ document.addEventListener("DOMContentLoaded", async () => {
         return;
     }
 
-    // Cria dinamicamente o input de arquivo
     const fileInput = document.createElement('input');
     fileInput.type = 'file';
     fileInput.accept = 'image/*';
     fileInput.style.display = 'none';
     document.body.appendChild(fileInput);
 
-    // Verifica se o usuário está logado e já tem imagem no Firestore
     firebase.auth().onAuthStateChanged(async (user) => {
         if (user) {
             const uid = user.uid;
@@ -95,18 +93,13 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
     });
 
-    // Quando clicar na div, abre o seletor de arquivos
     perfilDiv.addEventListener('click', () => {
         fileInput.click();
     });
 
-    // Quando selecionar um arquivo
     fileInput.addEventListener('change', async (e) => {
         const file = e.target.files[0];
         if (!file) return;
-
-        const imageUrl = URL.createObjectURL(file); // Para exibir localmente
-        console.log("Imagem local carregada:", imageUrl);
 
         try {
             const user = firebase.auth().currentUser;
@@ -115,16 +108,40 @@ document.addEventListener("DOMContentLoaded", async () => {
                 return;
             }
 
+            // Converte a imagem para base64
+            const toBase64 = (file) => new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = () => resolve(reader.result.split(',')[1]); // só o base64 puro
+                reader.onerror = error => reject(error);
+            });
+
+            const base64Image = await toBase64(file);
+
+            // Envia para o imgbb
+            const formData = new FormData();
+            formData.append('key', 'f239e89b38c6f6787bce1c987eea6a33');
+            formData.append('image', base64Image);
+
+            const response = await fetch('https://api.imgbb.com/1/upload', {
+                method: 'POST',
+                body: formData
+            });
+
+            const result = await response.json();
+
+            if (!result.success) {
+                throw new Error("Falha ao fazer upload no imgbb");
+            }
+
+            const imageUrl = result.data.url;
+
             const uid = user.uid;
             const userRef = firebase.firestore().collection('users').doc(uid);
 
-            // Salva a URL local (ou futuramente uma URL real de storage, se usar)
-            console.log("Salvando URL no Firestore:", imageUrl);
-            await userRef.set({ imageUrl: imageUrl }, { merge: true }).catch(error => {
-                console.error("Erro ao criar o campo imageUrl no Firestore:", error);
-            });
+            console.log("Salvando URL permanente no Firestore:", imageUrl);
+            await userRef.set({ imageUrl: imageUrl }, { merge: true });
 
-            // Aplica a imagem de fundo redonda
             perfilDiv.style.backgroundImage = `url(${imageUrl})`;
             perfilDiv.style.backgroundSize = 'cover';
             perfilDiv.style.backgroundPosition = 'center';
@@ -132,8 +149,6 @@ document.addEventListener("DOMContentLoaded", async () => {
             perfilDiv.style.width = '170px';
             perfilDiv.style.height = '170px';
 
-
-            // Remove a imagem e altera o texto do <p>
             const img = perfilDiv.querySelector('img');
             if (img) img.remove();
 
@@ -149,6 +164,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
     });
 });
+
     
 //Deslogar
 
