@@ -53,8 +53,8 @@
                             iconPerfil2.style.backgroundSize = 'cover';
                             iconPerfil2.style.backgroundPosition = 'center';
                             iconPerfil2.style.borderRadius = '50%';
-                            iconPerfil2.style.width = '40px';     // ajuste conforme necessário
-                            iconPerfil2.style.height = '40px';    // ajuste conforme necessário
+                            iconPerfil2.style.width = '50px';     // ajuste conforme necessário
+                            iconPerfil2.style.height = '50px';    // ajuste conforme necessário
         
                             // Remove imagem padrão
                             const img = iconPerfil2.querySelector('img');
