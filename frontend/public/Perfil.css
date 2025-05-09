@@ -307,7 +307,7 @@ html, body {
     }
 
     main>section{
-        width: 70%;
+        width: 50%;
         height: 300px;
         display: flex;
         justify-content: center;
