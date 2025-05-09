@@ -5,6 +5,15 @@ html, body {
     padding: 0;
 }
 
+button:hover{
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.692);
+}
+
+button{
+    transition: 0.3s;
+}
+
 /*Mobile*/
 @media (max-width: 767px){
     main{
@@ -370,7 +379,7 @@ html, body {
     
     #nomeUsuario {
         margin: 0;
-        font-weight: 400;
+        font-weight: 600;
         font-size: 24px;
         color: white;
     }    
