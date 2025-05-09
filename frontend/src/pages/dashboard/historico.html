@@ -15,70 +15,9 @@
     <script src="https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore-compat.js"></script>
     <script src="../../../js/configFirebase.js"></script>
     <script src="../../../js/header.js" defer></script>
+    <script src="../../../js/historico.js" defer></script>
     <link rel="shortcut icon" href="../../../img/favlogo.png" type="image/x-icon">
     <title>Stradia</title>
-    <script type="module">
-   // ver-historico.js
-
-document.addEventListener("DOMContentLoaded", () => {
-  firebase.auth().onAuthStateChanged((user) => {
-    if (!user) {
-      console.warn("Usuário não autenticado.");
-      return;
-    }
-
-    const userId = user.uid;
-    const historicoRef = firebase.firestore()
-      .collection("users")
-      .doc(userId)
-      .collection("historico");
-
-    historicoRef
-      .orderBy("timestamp", "desc")
-      .limit(10)
-      .get()
-      .then((querySnapshot) => {
-        const container = document.querySelector(".bloco-historico");
-        container.innerHTML = ""; // Limpa o conteúdo atual
-
-        querySnapshot.forEach((doc) => {
-          const data = doc.data();
-          const nome = data.nome;
-          const imagem = data.imagem;
-          const diaHora = data.diaHora;
-
-          const bloco = document.createElement("div");
-          bloco.className = "info-historico";
-
-          bloco.innerHTML = `
-            <img src="${imagem}" alt="${nome}">
-            <div>
-              <h2>${nome}</h2>
-              <h3>${diaHora}</h3>
-            </div>
-          `;
-
-          const btn = document.createElement("button");
-          btn.textContent = "Visitar";
-          btn.onclick = () => {
-            window.location.href = `estrada/${nome.toLowerCase()}.html`;
-          };
-
-          const wrapper = document.createElement("div");
-          wrapper.className = "bloco-historico";
-          wrapper.appendChild(bloco);
-          wrapper.appendChild(btn);
-
-          container.parentElement.appendChild(wrapper);
-        });
-      })
-      .catch((error) => {
-        console.error("Erro ao carregar histórico:", error);
-      });
-  });
-});
-
-        </script>        
 </head>
 <body>
     <header>
@@ -128,16 +67,19 @@ document.addEventListener("DOMContentLoaded", () => {
     </div>
     <section>
         <h1>Histórico:</h1>
+        <!-- EXEMPLO DE COMO TEM QUE ESTÁ
         <div class="bloco-historico">
             <div class="info-historico">
                 <img src="../../../img/am010.png" alt="am010">
                 <div>
                     <h2>AM-010</h2>
-                    <h3>Domingo - 20:35</h3>
+                    <h3>01/04/2025 - 20:35</h3>
                 </div>
             </div>
             <button onclick="location.href='estrada/am010.html'">Visitar</button>
-        </div>
+        </div> 
+        -->
+        
     </section>
 </main>
 </body>

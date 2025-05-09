@@ -57,3 +57,44 @@ document.addEventListener("DOMContentLoaded", function () {
 // historico.js
 
 // Função para salvar o histórico
+async function acessarEstrada(nomeEstrada, urlEstrada) {
+    const user = firebase.auth().currentUser;
+    if (!user) {
+        window.location.href = '../login/index.html';
+        return;
+    }
+
+    const uid = user.uid;
+    const firestore = firebase.firestore();
+    const historicoRef = firestore.collection('users').doc(uid);
+
+    // Obter URL da imagem com base no nome da estrada (exemplo: AM-320 → am320.png)
+    const nomeArquivo = nomeEstrada.toLowerCase().replace('-', '') + '.png';
+    const urlImagem = `../../../img/${nomeArquivo}`;
+
+    try {
+        const doc = await historicoRef.get();
+        let historico = doc.exists && doc.data().historico ? doc.data().historico : [];
+
+        // Remover entrada duplicada (com mesmo nome de estrada)
+        historico = historico.filter(item => item.nome !== nomeEstrada);
+
+        // Adiciona a nova entrada no topo
+        historico.unshift({
+            nome: nomeEstrada,
+            imagem: urlImagem,
+            data: new Date().toISOString()
+        });
+
+        // Limita a 10 entradas
+        if (historico.length > 10) historico = historico.slice(0, 10);
+
+        await historicoRef.set({ historico }, { merge: true });
+
+        // Redireciona após salvar
+        window.location.href = urlEstrada;
+    } catch (error) {
+        console.error("Erro ao salvar histórico:", error);
+    }
+}
+
