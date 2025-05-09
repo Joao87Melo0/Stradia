@@ -1,3 +1,11 @@
+#linkLogin:hover, #linkPerfil:hover{
+    transform: scale(1.05);
+}
+
+#linkLogin, #linkPerfil{
+    transition: 0.1s ease-in;
+}
+
 *{
     margin: 0;
     padding: 0;
