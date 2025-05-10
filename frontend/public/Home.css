@@ -236,7 +236,7 @@ footer{
     color: #FFF;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     font-family: Poppins;
-    font-size: 3.4em;
+    font-size: 3.7em;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -247,7 +247,7 @@ footer{
     color: #2448D7;
     text-shadow: 0px 4px 6px rgba(0, 34, 255, 0.25);
     font-family: Poppins;
-    font-size: 6.6em;
+    font-size: 7em;
     font-weight: 600;
     margin-bottom: -0.2em;
     margin-left: -0.03em;
@@ -256,7 +256,7 @@ footer{
 .titleStradia p{
     color: #FFF;
     font-family: Poppins;
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-style: normal;
     font-weight: 100;
     line-height: normal;
@@ -293,7 +293,7 @@ main #btn-register{
 }
 
 #btn-register:hover{
-    background-color: #02135B;
+    background-color: #0124B4;
     color: white;
 }
 
@@ -315,8 +315,18 @@ main #btn-login{
     transition: 0.2s;
 }
 
+#btn-login img {
+    transition: filter 0.3s ease;
+}
+
+#btn-login:hover img {
+    filter: brightness(0) saturate(100%) invert(8%) sepia(98%) saturate(700%) hue-rotate(190deg) brightness(100%) contrast(95%);
+}
+
 #btn-login:hover{
-    background-color: #000C3D;
+    background-color: #fff;
+    color: #02135B;
+    font-weight: 600;
 }
 
 /*sec-2*/
@@ -404,7 +414,7 @@ main{
     color: #FFF;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     font-family: Poppins;
-    font-size: 4em;
+    font-size: 4.5em;
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -415,7 +425,7 @@ main{
     color: #2448D7;
     text-shadow: 0px 4px 6px rgba(0, 34, 255, 0.25);
     font-family: Poppins;
-    font-size: 7.8em;
+    font-size: 8.6em;
     font-weight: 600;
     margin-bottom: -0.15em;
     margin-left: -0.06em;
@@ -424,7 +434,7 @@ main{
 .titleStradia p{
     color: #FFF;
     font-family: Poppins;
-    font-size: 1.4em;
+    font-size: 1.3em;
     font-style: normal;
     font-weight: 100;
     line-height: normal;
@@ -482,9 +492,18 @@ main #btn-login{
     cursor: pointer;
     transition: 0.2s;
 }
+#btn-login img {
+    transition: filter 0.3s ease;
+}
+
+#btn-login:hover img {
+    filter: brightness(0) saturate(100%) invert(8%) sepia(98%) saturate(700%) hue-rotate(190deg) brightness(100%) contrast(95%);
+}
 
 #btn-login:hover{
-    background-color: #000C3D;
+    background-color: #fff;
+    color: #02135B;
+    font-weight: 600;
 }
 
 /*sec-2*/
