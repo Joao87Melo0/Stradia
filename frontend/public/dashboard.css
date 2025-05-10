@@ -302,6 +302,47 @@ button:hover{
         height: 100%;
     }
 
+    /*Filtros*/
+    .filtros{
+        width: 400px;
+        height: 300px;
+        border-radius: 15px;
+        background: #0F1F61;
+        box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
+        margin-top: 50px;
+        margin-left: 680px;
+        position: absolute;
+        z-index: 1000;
+    }
+
+    .filtros>div{
+        display: flex;
+        flex-direction: column;
+        margin: 20px;
+    }
+
+    .filtros>div>div{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .filtros h3{
+        color: white;
+        font-weight: 400;
+    }
+
+    .filtros .escolha{
+        background-color: rgba(255, 255, 255, 0);
+        color: white;
+        border: 1px solid rgba(134, 134, 134, 0.418);
+        margin: 5px;
+    }
+
+    .filtros .escolha:active{
+        background-color: rgba(255, 255, 255, 0.247);
+    }
+
     #footer{
         justify-self: flex-end !important;
     }

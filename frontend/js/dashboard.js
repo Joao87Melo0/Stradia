@@ -171,7 +171,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const botao = document.createElement("button");
             botao.textContent = "Visitar";
-            botao.onclick = () => location.href = estrada.url;
+            botao.onclick = () => acessarEstrada(estrada.nome, estrada.url);
 
             bloco.appendChild(info);
             bloco.appendChild(botao);
@@ -183,4 +183,19 @@ document.addEventListener("DOMContentLoaded", () => {
             resultDiv.classList.add("ativa");
         }, 10);
     }
+});
+
+//Filtros
+
+document.addEventListener("DOMContentLoaded", () => {
+    const botao = document.getElementById("botaoFiltros");
+    const filtros = document.getElementById("filtros");
+
+    botao.addEventListener("click", () => {
+        if (filtros.style.display === "none" || filtros.style.display === "") {
+            filtros.style.display = "block";
+        } else {
+            filtros.style.display = "none";
+        }
+    });
 });

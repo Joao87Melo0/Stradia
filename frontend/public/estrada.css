@@ -5,6 +5,10 @@ html, body {
     padding: 0;
 }
 
+input:focus{
+    outline: none;
+}
+
 /*Mobile*/
 @media (max-width: 767px){
     main{
@@ -169,6 +173,70 @@ html, body {
         margin-left: 20px;
     }
 
+    /*resultado barra de pesquisa*/
+    .result-pesquisa{
+        width: 550px;
+        border-radius: 15px;
+        background: #0F1F61;
+        box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        align-self: center;
+        justify-self: center;
+        padding: 10px;
+        margin-top: 50px;
+        position: absolute;
+        z-index: 1000;
+    }
+
+    .bloco-pesquisa{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.555);
+        padding: 15px 0px;
+    }
+
+    .bloco-pesquisa button{
+        width: 100px;
+        height: 30px;
+        border-radius: 10px;
+        font-size: 16px;
+        color: #0F1F61;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .bloco-pesquisa button:hover{
+        background-color: #bebebe;
+    }
+
+    .info-pesquisa{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .info-pesquisa h2{
+        font-weight: 500;
+        font-size: 20px;
+        color: white;
+    }
+
+    .info-pesquisa img{
+        height: 40px;
+        width: 40px;
+        border-radius: 5px;
+    }
+
+    .info-pesquisa div{
+        color: white;
+        margin-left: 10px;
+        height: 100%;
+    }
+
     #footer{
         justify-self: flex-end !important;
     }
@@ -302,6 +370,70 @@ html, body {
 
     main .search button{
         margin-left: 20px;
+    }
+
+    /*resultado barra de pesquisa*/
+    .result-pesquisa{
+        width: 550px;
+        border-radius: 15px;
+        background: #0F1F61;
+        box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        align-self: center;
+        justify-self: center;
+        padding: 10px;
+        margin-top: 50px;
+        position: absolute;
+        z-index: 99999;
+    }
+
+    .bloco-pesquisa{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.555);
+        padding: 15px 0px;
+    }
+
+    .bloco-pesquisa button{
+        width: 100px;
+        height: 30px;
+        border-radius: 10px;
+        font-size: 16px;
+        color: #0F1F61;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .bloco-pesquisa button:hover{
+        background-color: #bebebe;
+    }
+
+    .info-pesquisa{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .info-pesquisa h2{
+        font-weight: 500;
+        font-size: 20px;
+        color: white;
+    }
+
+    .info-pesquisa img{
+        height: 40px;
+        width: 40px;
+        border-radius: 5px;
+    }
+
+    .info-pesquisa div{
+        color: white;
+        margin-left: 10px;
+        height: 100%;
     }
 
     #footer{
