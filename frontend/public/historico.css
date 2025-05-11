@@ -232,9 +232,8 @@ main section>button:hover{
         display: flex;
         align-items: center;
         flex-direction: column;
-        align-self: center;
-        justify-self: center;
         padding: 10px;
+        overflow-y: auto;
         margin-top: 100px;
     }
 
