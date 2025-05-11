@@ -2,27 +2,22 @@ const container = document.querySelector('.estradas-container');
 const leftBtn = document.querySelector('.arrow-left');
 const rightBtn = document.querySelector('.arrow-right');
 
+console.log("Usuário atual:", firebase.auth().currentUser);
+
+if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+}
+
 leftBtn.addEventListener('click', () => {
-    container.scrollLeft -= 350; // agora é um número
+    container.scrollLeft -= 350;
 });
 
 rightBtn.addEventListener('click', () => {
-    container.scrollLeft += 350; // agora é um número
+    container.scrollLeft += 350;
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Verifica se Firebase já está inicializado
-    if (!firebase.apps.length) {
-        firebase.initializeApp({
-            apiKey: "AIzaSyBvu0mtO55x6nmZUNx-ZkHADLXm9kPMptc",
-            authDomain: "stradia-dc4ec.firebaseapp.com",
-            projectId: "stradia-dc4ec",
-            storageBucket: "stradia-dc4ec.firebasestorage.app",
-            messagingSenderId: "779122798948",
-            appId: "1:779122798948:web:2b5323947f8bf371a98a71",
-            measurementId: "G-B8DFHXJSCP"
-        });
-    }
+    // Firebase init redundante removido (já feito acima)
 
     const db = firebase.firestore();
 
@@ -51,55 +46,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 });
         }
     });
-});
 
-//Historico
-// historico.js
-
-// Função para salvar o histórico
-async function acessarEstrada(nomeEstrada, urlEstrada) {
-    const user = firebase.auth().currentUser;
-    if (!user) {
-        window.location.href = '../login/index.html';
-        return;
-    }
-
-    const uid = user.uid;
-    const firestore = firebase.firestore();
-    const historicoRef = firestore.collection('users').doc(uid);
-
-    // Obter URL da imagem com base no nome da estrada (exemplo: AM-320 → am320.png)
-    const nomeArquivo = nomeEstrada.toLowerCase().replace('-', '') + '.png';
-    const urlImagem = `../../../img/${nomeArquivo}`;
-
-    try {
-        const doc = await historicoRef.get();
-        let historico = doc.exists && doc.data().historico ? doc.data().historico : [];
-
-        // Remover entrada duplicada (com mesmo nome de estrada)
-        historico = historico.filter(item => item.nome !== nomeEstrada);
-
-        // Adiciona a nova entrada no topo
-        historico.unshift({
-            nome: nomeEstrada,
-            imagem: urlImagem,
-            data: new Date().toISOString()
-        });
-
-        // Limita a 10 entradas
-        if (historico.length > 10) historico = historico.slice(0, 10);
-
-        await historicoRef.set({ historico }, { merge: true });
-
-        // Redireciona após salvar
-        window.location.href = urlEstrada;
-    } catch (error) {
-        console.error("Erro ao salvar histórico:", error);
-    }
-}
-
-//Barra de pesquisa
-document.addEventListener("DOMContentLoaded", () => {
+    // Barra de pesquisa
     const input = document.getElementById("searchdashboard");
 
     const estradas = [
@@ -144,7 +92,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function criarResultados(termo) {
         const resultados = estradas.filter(estrada => {
-            // Adicionando a lógica para pesquisar sem o hífen
             const nomeSemHifen = estrada.nome.replace("-", "").toLowerCase();
             return nomeSemHifen.includes(termo) || estrada.nome.toLowerCase().includes(termo);
         }).slice(0, 3);
@@ -175,7 +122,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const botao = document.createElement("button");
             botao.textContent = "Visitar";
-            botao.onclick = () => acessarEstrada(estrada.nome, estrada.url);
+            botao.onclick = async () => {
+                await acessarEstrada(estrada.nome, estrada.url);
+            };
 
             bloco.appendChild(info);
             bloco.appendChild(botao);
@@ -187,24 +136,25 @@ document.addEventListener("DOMContentLoaded", () => {
             resultDiv.classList.add("ativa");
         }, 10);
     }
-});
 
-//Filtros
-
-document.addEventListener("DOMContentLoaded", () => {
+    // Corrigido botão de filtros
     const botao = document.getElementById("botaoFiltros");
     const filtros = document.getElementById("filtros");
 
-    botao.addEventListener("click", () => {
-        if (filtros.style.display === "none" || filtros.style.display === "") {
-            filtros.style.display = "block";
-        } else {
-            filtros.style.display = "none";
-        }
-    });
+    if (botao && filtros) {
+        botao.addEventListener("click", () => {
+            if (filtros.style.display === "none" || filtros.style.display === "") {
+                filtros.style.display = "block";
+            } else {
+                filtros.style.display = "none";
+            }
+        });
+    }
+
+    // Inicia com 10 aleatórias
+    atualizarEstradas();
 });
 
-//FIltros e gera estradas
 const estradas = [
     { nome: 'AM-010', img: '../../../img/am010.png', categorias: ['Metropolitana', 'Bom'] },
     { nome: 'AM-070', img: '../../../img/am070.png', categorias: ['Metropolitana', 'Regular'] },
@@ -221,89 +171,78 @@ const estradas = [
     { nome: 'BR-317', img: '../../../img/br317.png', categorias: ['Interior', 'Péssimo'] },
     { nome: 'BR-319', img: '../../../img/br319.png', categorias: ['Interior', 'Péssimo'] },
 ];
-  
-  // Função para gerar as estradas filtradas
+
 const containner = document.querySelector('.estradas-container');
 const botoesFiltro = document.querySelectorAll('.escolha');
 
 let filtrosAtivos = [];
 
-// Marcar/desmarcar filtros
 botoesFiltro.forEach(botao => {
-  botao.addEventListener('click', () => {
-    const categoria = botao.textContent.trim();
+    botao.addEventListener('click', () => {
+        const categoria = botao.textContent.trim();
 
-    if (filtrosAtivos.includes(categoria)) {
-      filtrosAtivos = filtrosAtivos.filter(f => f !== categoria);
-      botao.style.backgroundColor = ''; // desativa visualmente
-    } else {
-      filtrosAtivos.push(categoria);
-      botao.style.backgroundColor = 'lightblue'; // ativa visualmente
-    }
+        if (filtrosAtivos.includes(categoria)) {
+            filtrosAtivos = filtrosAtivos.filter(f => f !== categoria);
+            botao.style.backgroundColor = '';
+        } else {
+            filtrosAtivos.push(categoria);
+            botao.style.backgroundColor = 'lightblue';
+        }
 
-    atualizarEstradas();
-  });
+        atualizarEstradas();
+    });
 });
 
 function atualizarEstradas() {
-  let filtradas;
+    let filtradas;
 
-  if (filtrosAtivos.length === 0) {
-    // Nenhum filtro: exibir 10 aleatórias
-    filtradas = embaralharArray(estradas).slice(0, 10);
-  } else {
-    // Filtro: pega as que têm TODAS as categorias selecionadas
-    filtradas = estradas.filter(estrada =>
-      filtrosAtivos.every(filtro => estrada.categorias.includes(filtro))
-    );
+    if (filtrosAtivos.length === 0) {
+        filtradas = embaralharArray(estradas).slice(0, 10);
+    } else {
+        filtradas = estradas.filter(estrada =>
+            filtrosAtivos.every(filtro => estrada.categorias.includes(filtro))
+        );
 
-    // Se menos de 10, completa com aleatórias não repetidas
-    if (filtradas.length < 10) {
-      const restantes = estradas.filter(e => !filtradas.includes(e));
-      const adicionais = embaralharArray(restantes).slice(0, 10 - filtradas.length);
-      filtradas = filtradas.concat(adicionais);
+        if (filtradas.length < 10) {
+            const restantes = estradas.filter(e => !filtradas.includes(e));
+            const adicionais = embaralharArray(restantes).slice(0, 10 - filtradas.length);
+            filtradas = filtradas.concat(adicionais);
+        }
     }
-  }
 
-  exibirEstradas(filtradas);
+    exibirEstradas(filtradas);
 }
 
 function exibirEstradas(lista) {
-  containner.innerHTML = ''; // limpa antes
+    containner.innerHTML = '';
 
-  lista.forEach(estrada => {
-    const div = document.createElement('div');
-    div.className = 'estrada';
+    lista.forEach(estrada => {
+        const div = document.createElement('div');
+        div.className = 'estrada';
 
-    const img = document.createElement('img');
-    img.src = estrada.img;
-    img.alt = estrada.nome;
+        const img = document.createElement('img');
+        img.src = estrada.img;
+        img.alt = estrada.nome;
 
-    const btn = document.createElement('button');
-    btn.textContent = estrada.nome;
-    btn.onclick = () => acessarEstrada(estrada.nome, `estrada/${estrada.nome.toLowerCase()}.html`);
+        const btn = document.createElement('button');
+        btn.textContent = estrada.nome;
+        btn.onclick = async () => {
+            const estradaUrl = `estrada/${estrada.nome.toLowerCase().replace('-', '')}.html`;
+            await acessarEstrada(estrada.nome, estradaUrl);
+        };
 
-    div.appendChild(img);
-    div.appendChild(btn);
-    containner.appendChild(div);
-  });
+        div.appendChild(img);
+        div.appendChild(btn);
+        containner.appendChild(div);
+    });
 }
 
-// Embaralha array (Fisher-Yates)
 function embaralharArray(array) {
-  const a = [...array];
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
+    const a = [...array];
+    for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
 }
-
-// Função já existente ou necessária para redirecionar
-function acessarEstrada(nome, url) {
-  // salvar no Firestore se necessário, aqui só redireciona
-  location.href = url;
-}
-
-// Inicia com 10 aleatórias
-document.addEventListener('DOMContentLoaded', atualizarEstradas);
+    

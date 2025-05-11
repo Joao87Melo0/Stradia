@@ -16,6 +16,7 @@
     <script src="../../../../js/configFirebase.js"></script>
     <script src="../../../../js/header.js" defer></script>
     <script src="../../../../js/dashboard.js" defer></script>
+    <script src="../../../../js/funcaoHistorico.js"></script>
     <script src="../../../../js/estrada.js" defer></script>
     <script src="../../../../js/estrada/am070.js" defer></script>
     <link rel="shortcut icon" href="../../../../img/favlogo.png" type="image/x-icon">
@@ -78,10 +79,34 @@
             </div>
             <div class="sec-2">
                 <div class="condicao">
-                    <h3>Condição da Via</h3>
+                    <h3>Condição da Via:</h3>
+                    <h3 id="condicao">Condição</h3>
                 </div>
-                <div>
-                    <h3>Dados</h3>
+                <div class="dados">
+                    <div>
+                        <h3>Dados:</h3>
+                    </div>
+                    <div class="dados1">
+                        <img src="../../../../img/SetaDash.png" alt="">
+                        <div class="dados2">
+                            <p class="dados3">Rodovia:</p>
+                            <p id="nome">AM-010</p>
+                        </div>
+                    </div>
+                    <div class="dados1">
+                        <img src="../../../../img/SetaDash.png" alt="">
+                        <div class="dados2">
+                            <p class="dados3">Região:</p>
+                            <p id="regiao">Metropolitana</p>
+                        </div>
+                    </div>
+                    <div class="dados1">
+                        <img src="../../../../img/SetaDash.png" alt="">
+                        <div class="dados2">
+                            <p class="dados3">Percentual da defasagem:</p>
+                            <p id="percentual">50%</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>

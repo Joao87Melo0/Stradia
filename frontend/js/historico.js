@@ -1,53 +1,8 @@
-// Função para salvar o histórico
-async function acessarEstrada(nomeEstrada, urlEstrada) {
-    const user = firebase.auth().currentUser;
-    if (!user) {
-        window.location.href = '../login/index.html';
-        return;
-    }
-
-    const uid = user.uid;
-    const firestore = firebase.firestore();
-    const historicoRef = firestore.collection('users').doc(uid);
-
-    // Obter URL da imagem com base no nome da estrada (exemplo: AM-320 → am320.png)
-    const nomeArquivo = nomeEstrada.toLowerCase().replace('-', '') + '.png';
-    const urlImagem = `../../../img/${nomeArquivo}`;
-
-    try {
-        const doc = await historicoRef.get();
-        let historico = doc.exists && doc.data().historico ? doc.data().historico : [];
-
-        // Remover entrada duplicada (com mesmo nome de estrada)
-        historico = historico.filter(item => item.nome !== nomeEstrada);
-
-        // Adiciona a nova entrada no topo
-        historico.unshift({
-            nome: nomeEstrada,
-            imagem: urlImagem,
-            data: new Date().toISOString()
-        });
-
-        // Limita a 10 entradas
-        if (historico.length > 10) historico = historico.slice(0, 10);
-
-        await historicoRef.set({ historico }, { merge: true });
-
-        // Redireciona após salvar
-        window.location.href = urlEstrada;
-    } catch (error) {
-        console.error("Erro ao salvar histórico:", error);
-    }
-}
-
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("DOM carregado");
-
     const auth = firebase.auth();
     const db = firebase.firestore();
     const estradas = [
         { nome: "AM-010", img: "../../../img/am010.png", url: "estrada/am010.html" },
-        { nome: "AM-020", img: "../../../img/am020.png", url: "estrada/am020.html" },
         { nome: "AM-070", img: "../../../img/am070.png", url: "estrada/am070.html" },
         { nome: "AM-240", img: "../../../img/am240.png", url: "estrada/am240.html" },
         { nome: "AM-254", img: "../../../img/am254.png", url: "estrada/am254.html" },
@@ -56,48 +11,51 @@ document.addEventListener("DOMContentLoaded", () => {
         { nome: "AM-354", img: "../../../img/am354.png", url: "estrada/am354.html" },
         { nome: "AM-363", img: "../../../img/am363.png", url: "estrada/am363.html" },
         { nome: "AM-366", img: "../../../img/am366.png", url: "estrada/am366.html" },
-        { nome: "AM-449", img: "../../../img/am449.png", url: "estrada/am449.html" }
+        { nome: "AM-449", img: "../../../img/am449.png", url: "estrada/am449.html" },
+        { nome: "BR-174", img: "../../../img/br174.png", url: "estrada/br174.html" },
+        { nome: "BR-319", img: "../../../img/br319.png", url: "estrada/br319.html" },
+        { nome: "BR-317", img: "../../../img/br317.png", url: "estrada/br317.html" },
+        { nome: "BR-230", img: "../../../img/br230.png", url: "estrada/br230.html" }
     ];
 
-
     const section = document.querySelector("#historico section");
-    if (!section) {
-        console.error("Section não encontrada no DOM");
-        return;
-    }
-
-    const h1 = section.querySelector("h1");
+    const h1 = section?.querySelector("h1");
 
     auth.onAuthStateChanged(async (user) => {
         if (!user) {
-            console.warn("Usuário não autenticado. Redirecionando...");
             window.location.href = "../login/index.html";
             return;
         }
 
-        console.log("Usuário autenticado:", user.uid);
-
         try {
             const docRef = db.collection("users").doc(user.uid);
             const doc = await docRef.get();
-
-            if (!doc.exists) {
-                console.warn("Documento do usuário não existe.");
-                section.innerHTML = "";
-                section.appendChild(h1);
-                const p = document.createElement("p");
-                p.textContent = "Você ainda não possui histórico.";
-                section.appendChild(p);
-                return;
-            }
-
             const data = doc.data();
             const historico = data?.historico || [];
 
-            console.log("Histórico recuperado:", historico);
-
             section.innerHTML = "";
             section.appendChild(h1);
+            
+            //Botao limpar historico
+            const botaoLimpar = document.createElement("button");
+            botaoLimpar.textContent = "Limpar";
+            botaoLimpar.onclick = async () => {
+                try {
+                    // Limpa as entradas do histórico, mas mantém o campo 'historico'
+                    await docRef.update({
+                        historico: firebase.firestore.FieldValue.delete()  // Isso irá deletar apenas as entradas, não o campo inteiro.
+                    });
+
+                    // Após limpar, recarregue a página para refletir
+                    location.reload();
+                } catch (err) {
+                    console.error("Erro ao apagar histórico:", err);
+                }
+            };
+
+            section.appendChild(botaoLimpar);
+
+
 
             if (historico.length === 0) {
                 const p = document.createElement("p");
@@ -109,9 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             historico
                 .sort((a, b) => new Date(b.data) - new Date(a.data))
-                .forEach((item, index) => {
-                    console.log(`Adicionando item ${index}:`, item);
-
+                .forEach((item) => {
                     const bloco = document.createElement("div");
                     bloco.className = "bloco-historico";
 
@@ -137,16 +93,14 @@ document.addEventListener("DOMContentLoaded", () => {
                     info.appendChild(img);
                     info.appendChild(texto);
 
-                    const botao = document.createElement("button");
-                    botao.textContent = "Visitar";
-                    botao.onclick = () => {
-                        const estradaEncontrada = estradas.find(e => e.nome === item.nome);
-                        if (estradaEncontrada) {
-                            acessarEstrada(estradaEncontrada.nome, estradaEncontrada.url);
-                        } else {
-                            console.warn("Estrada não encontrada:", item.nome);
-                        }
-                    };                    
+                        const botao = document.createElement("button");
+                        botao.textContent = "Visitar";
+                        botao.onclick = () => {
+                            const estradaEncontrada = estradas.find(e => e.nome === item.nome);
+                            if (estradaEncontrada) {
+                                acessarEstrada(estradaEncontrada.nome, estradaEncontrada.url);
+                            }
+                        };
 
                     bloco.appendChild(info);
                     bloco.appendChild(botao);
@@ -154,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
 
         } catch (error) {
-            console.error("Erro ao buscar histórico:", error);
+            console.error("Erro ao carregar histórico:", error);
             section.innerHTML = "";
             section.appendChild(h1);
             const p = document.createElement("p");

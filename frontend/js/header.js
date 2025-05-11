@@ -67,3 +67,14 @@
             }
         });        
     }); 
+
+    firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          console.log("Usuário atual:", user);
+          // Aqui você pode acessar user.uid, user.email, etc.
+        } else {
+          console.log("Nenhum usuário está logado.");
+          // Redirecione para login, se necessário
+        }
+      });
+      

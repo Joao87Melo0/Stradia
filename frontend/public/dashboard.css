@@ -11,6 +11,18 @@ button:hover{
     background-color: rgba(255, 255, 255, 0.692);
 }
 
+input[type="search"]::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    height: 14px;
+    width: 14px;
+    margin-right: 15px;
+    background: url('../img/x.svg') no-repeat center center;
+    background-size: contain;
+    filter: invert(1); /* torna o SVG branco, se ele for preto */
+    cursor: pointer;
+  }
+  
+
 /*Mobile*/
 @media (max-width: 767px){
     main{
@@ -602,7 +614,7 @@ button:hover{
         margin-left: 10px;
         height: 100%;
     }
-    
+
     /*Filtros*/
     .filtros{
         width: 400px;
