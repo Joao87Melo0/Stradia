@@ -8,15 +8,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../../../public/fonts.css">
     <link rel="stylesheet" href="../../../public/header.css">
-    <link rel="stylesheet" href="../../../public/historico.css">
+    <link rel="stylesheet" href="../../../public/institucional.css">
     <link rel="stylesheet" href="../../../public/footer.css">
     <script src="https://www.gstatic.com/firebasejs/11.4.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/11.4.0/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/11.4.0/firebase-firestore-compat.js"></script>
     <script src="../../../js/configFirebase.js"></script>
-    <script src="../../../js/funcaoHistorico.js"></script>
-    <script src="../../../js/header.js" defer></script>
-    <script src="../../../js/historico.js" defer></script>
+    <script src="../../../js/home.js" defer></script>
     <link rel="shortcut icon" href="../../../img/favlogo.png" type="image/x-icon">
     <title>Stradia</title>
 </head>
@@ -62,23 +60,37 @@
         </div>
     </nav>
 </header>
-<main id="historico">
+<main id="homepage">
+    <div class="back">
+            <button onclick="window.history.back()"><img src="../../../img/Seta.png" alt=""></button>
+    </div>
+    <h1>Institucional</h1>
     <section>
-        <h1>Histórico:</h1>
-        <!-- EXEMPLO DE COMO TEM QUE ESTÁ
-        <div class="bloco-historico">
-            <div class="info-historico">
-                <img src="../../../img/am010.png" alt="am010">
-                <div>
-                    <h2>AM-010</h2>
-                    <h3>01/04/2025 - 20:35</h3>
-                </div>
-            </div>
-            <button onclick="location.href='estrada/am010.html'">Visitar</button>
-        </div> 
-        -->
-        
+        <div id="div1">O projeto visa criar uma interface web que sirva como um canal de denúncia e conscientização sobre a precária situação das rodovias intermunicipais da Região Amazônica. Embora a plataforma não proponha uma solução imediata para o problema, ela utilizará a tecnologia de aprendizado de máquina para expor e analisar a deterioração das estradas de maneira eficiente e acessível.</div>
+        <div id="div2">A proposta não apenas visibiliza um problema estruturante para o Brasil, mas também promove uma maior transparência e engajamento da sociedade e dos órgãos responsáveis, incentivando uma ação mais eficaz para a melhoria das condições de pavimentação e infraestrutura nas rodovias da Amazônia.</div>
     </section>
+    <footer>
+        <section class="text-footer">
+            <div>
+                <div><img src="../../../img/Footer Suporte.png" alt=".."><a href="../suporte/index.html">
+                    Suporte
+                </a></div>
+                <div>? <a href="../faq/index.html" id="perguntasFrequentes">
+                    Perguntas Frequentes
+                </a></div>
+            </div>
+            <div>
+                <div><img src="../../../img/Footer Contato.png" alt=".."><a href="../contato/index.html">
+                    Contato
+                </a></div>
+                <div id="footerSocial"><img src="../../../img/Footer Social.png" alt=".."><a href="../contato/index.html">
+                    Social
+                </a></div>
+            </div>
+        </section>
+        <section id="lineFooter"></section>
+        <section id="credits">© 2025 Stradia. Todos os direitos reservados.</section>
+    </footer>
 </main>
 </body>
 </html>

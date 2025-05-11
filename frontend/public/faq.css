@@ -58,6 +58,33 @@ html, body {
         height: 100%;
     }
 
+    .back{
+        height: 60px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+    
+    .back button{
+        cursor: pointer;
+        border-radius: 50%;
+        background-color: #7885BE73;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 8px;
+        transition: 0.2s;
+    }
+    
+    .back button:hover{
+        background-color: #162B83;
+    }
+    
+    .back img{
+        height: 28px;
+        margin: 7px;
+    }
+
     #faq-container {
         display: flex;
         flex-direction: column;
@@ -71,6 +98,7 @@ html, body {
     #faq-container h1 {
         color: white;
         margin-bottom: 0; /* Removido o espaçamento inferior */
+        font-size: 48px;
     }
 
     #faq-container .buttons {
@@ -251,6 +279,33 @@ html, body {
         height: 100%;
     }
 
+    .back{
+        height: 60px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+    
+    .back button{
+        cursor: pointer;
+        border-radius: 50%;
+        background-color: #7885BE73;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 8px;
+        transition: 0.2s;
+    }
+    
+    .back button:hover{
+        background-color: #162B83;
+    }
+    
+    .back img{
+        height: 28px;
+        margin: 7px;
+    }
+
     #faq-container {
         display: flex;
         flex-direction: column;
@@ -263,7 +318,7 @@ html, body {
 
     #faq-container h1 {
         color: white;
-        font-size: 40px;
+        font-size: 50px;
         margin-bottom: 0; /* Removido o espaçamento inferior */
     }
 
