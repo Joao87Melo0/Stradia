@@ -17,8 +17,6 @@ rightBtn.addEventListener('click', () => {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    // Firebase init redundante removido (já feito acima)
-
     const db = firebase.firestore();
 
     firebase.auth().onAuthStateChanged(function(user) {
@@ -61,11 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
         { nome: "AM-354", img: "../../../img/am354.png", url: "estrada/am354.html" },
         { nome: "AM-363", img: "../../../img/am363.png", url: "estrada/am363.html" },
         { nome: "AM-366", img: "../../../img/am366.png", url: "estrada/am366.html" },
-        { nome: "AM-449", img: "../../../img/am449.png", url: "estrada/am449.html" },
-        { nome: "BR-174", img: "../../../img/br174.png", url: "estrada/br174.html" },
-        { nome: "BR-230", img: "../../../img/br230.png", url: "estrada/br230.html" },
-        { nome: "BR-317", img: "../../../img/br317.png", url: "estrada/br317.html" },
-        { nome: "BR-319", img: "../../../img/br319.png", url: "estrada/br319.html" }
+        { nome: "AM-449", img: "../../../img/am449.png", url: "estrada/am449.html" }
     ];
 
     const sec1Dash = document.querySelector(".sec-1-dash");
@@ -134,10 +128,10 @@ document.addEventListener("DOMContentLoaded", function () {
         sec1Dash.insertBefore(resultDiv, historicoBtn);
         setTimeout(() => {
             resultDiv.classList.add("ativa");
-        }, 10);
+        }, 7);
     }
 
-    // Corrigido botão de filtros
+    // Botão de filtros
     const botao = document.getElementById("botaoFiltros");
     const filtros = document.getElementById("filtros");
 
@@ -156,20 +150,16 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 const estradas = [
-    { nome: 'AM-010', img: '../../../img/am010.png', categorias: ['Metropolitana', 'Bom'] },
-    { nome: 'AM-070', img: '../../../img/am070.png', categorias: ['Metropolitana', 'Regular'] },
-    { nome: 'AM-240', img: '../../../img/am240.png', categorias: ['Interior', 'Ruim'] },
-    { nome: 'AM-254', img: '../../../img/am254.png', categorias: ['Metropolitana', 'Péssimo'] },
-    { nome: 'AM-343', img: '../../../img/am343.png', categorias: ['Interior', 'Péssimo'] },
-    { nome: 'AM-352', img: '../../../img/am352.png', categorias: ['Metropolitana', 'Péssimo'] },
-    { nome: 'AM-354', img: '../../../img/am354.png', categorias: ['Metropolitana', 'Péssimo'] },
-    { nome: 'AM-363', img: '../../../img/am363.png', categorias: ['Interior', 'Péssimo'] },
+    { nome: 'AM-010', img: '../../../img/am010.png', categorias: ['Metropolitana', 'Muito Bom'] },
+    { nome: 'AM-070', img: '../../../img/am070.png', categorias: ['Metropolitana', 'Péssima'] },
+    { nome: 'AM-240', img: '../../../img/am240.png', categorias: ['Interior', 'Péssima'] },
+    { nome: 'AM-254', img: '../../../img/am254.png', categorias: ['Metropolitana', 'Muito Bom'] },
+    { nome: 'AM-343', img: '../../../img/am343.png', categorias: ['Interior', 'Ruim'] },
+    { nome: 'AM-352', img: '../../../img/am352.png', categorias: ['Metropolitana', 'Bom'] },
+    { nome: 'AM-354', img: '../../../img/am354.png', categorias: ['Metropolitana', 'Muito Bom'] },
+    { nome: 'AM-363', img: '../../../img/am363.png', categorias: ['Interior', 'Muito Bom'] },
     { nome: 'AM-366', img: '../../../img/am366.png', categorias: ['Interior', 'Péssimo'] },
-    { nome: 'AM-449', img: '../../../img/am449.png', categorias: ['Interior', 'Péssimo'] },
-    { nome: 'BR-174', img: '../../../img/br174.png', categorias: ['Metropolitana', 'Péssimo'] },
-    { nome: 'BR-230', img: '../../../img/br230.png', categorias: ['Interior', 'Péssimo'] },
-    { nome: 'BR-317', img: '../../../img/br317.png', categorias: ['Interior', 'Péssimo'] },
-    { nome: 'BR-319', img: '../../../img/br319.png', categorias: ['Interior', 'Péssimo'] },
+    { nome: 'AM-449', img: '../../../img/am449.png', categorias: ['Interior', 'Péssimo'] }
 ];
 
 const containner = document.querySelector('.estradas-container');
@@ -197,17 +187,12 @@ function atualizarEstradas() {
     let filtradas;
 
     if (filtrosAtivos.length === 0) {
-        filtradas = embaralharArray(estradas).slice(0, 10);
+        filtradas = embaralharArray(estradas).slice(0, 7);
     } else {
         filtradas = estradas.filter(estrada =>
             filtrosAtivos.every(filtro => estrada.categorias.includes(filtro))
         );
-
-        if (filtradas.length < 10) {
-            const restantes = estradas.filter(e => !filtradas.includes(e));
-            const adicionais = embaralharArray(restantes).slice(0, 10 - filtradas.length);
-            filtradas = filtradas.concat(adicionais);
-        }
+        // Não completa com aleatórias se houver filtros ativos
     }
 
     exibirEstradas(filtradas);
@@ -245,4 +230,3 @@ function embaralharArray(array) {
     }
     return a;
 }
-    
