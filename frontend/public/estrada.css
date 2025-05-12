@@ -193,8 +193,12 @@ input[type="search"]::-webkit-search-cancel-button {
         margin-right: 10px;
     }
 
-    #condicao, #nome, #percentual, #regiao{
+    #condicao, #percentual{
         color: #FF8000;
+    }
+
+    #regiao, #nome{
+        color: white;
     }
 
     .dados{
@@ -447,8 +451,12 @@ input[type="search"]::-webkit-search-cancel-button {
         margin-right: 10px;
     }
 
-    #condicao, #nome, #percentual, #regiao{
+    #condicao, #percentual{
         color: #FF8000;
+    }
+
+    #regiao, #nome{
+        color: white;
     }
 
     .dados{
