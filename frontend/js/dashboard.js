@@ -45,7 +45,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Barra de pesquisa
     const input = document.getElementById("searchdashboard");
 
     const estradas = [
@@ -131,7 +130,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 7);
     }
 
-    // Botão de filtros
     const botao = document.getElementById("botaoFiltros");
     const filtros = document.getElementById("filtros");
 
@@ -145,7 +143,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Inicia com 10 aleatórias
     atualizarEstradas();
 });
 
@@ -165,17 +162,36 @@ const estradas = [
 const containner = document.querySelector('.estradas-container');
 const botoesFiltro = document.querySelectorAll('.escolha');
 
-let filtrosAtivos = [];
+let filtrosAtivos = {
+    regiao: [],
+    condicao: []
+};
+
+const categoriasPorGrupo = {
+    regiao: ['Metropolitana', 'Interior'],
+    condicao: ['Muito Bom', 'Bom', 'Ruim', 'Péssima', 'Péssimo']
+};
 
 botoesFiltro.forEach(botao => {
     botao.addEventListener('click', () => {
         const categoria = botao.textContent.trim();
 
-        if (filtrosAtivos.includes(categoria)) {
-            filtrosAtivos = filtrosAtivos.filter(f => f !== categoria);
+        let grupo = null;
+        for (let key in categoriasPorGrupo) {
+            if (categoriasPorGrupo[key].includes(categoria)) {
+                grupo = key;
+                break;
+            }
+        }
+
+        if (!grupo) return;
+
+        const grupoAtivo = filtrosAtivos[grupo];
+        if (grupoAtivo.includes(categoria)) {
+            filtrosAtivos[grupo] = grupoAtivo.filter(f => f !== categoria);
             botao.style.backgroundColor = '';
         } else {
-            filtrosAtivos.push(categoria);
+            filtrosAtivos[grupo].push(categoria);
             botao.style.backgroundColor = 'lightblue';
         }
 
@@ -184,15 +200,18 @@ botoesFiltro.forEach(botao => {
 });
 
 function atualizarEstradas() {
-    let filtradas;
+    let filtradas = estradas.filter(estrada => {
+        for (let grupo in filtrosAtivos) {
+            const filtrosDoGrupo = filtrosAtivos[grupo];
+            if (filtrosDoGrupo.length > 0 && !filtrosDoGrupo.some(f => estrada.categorias.includes(f))) {
+                return false;
+            }
+        }
+        return true;
+    });
 
-    if (filtrosAtivos.length === 0) {
+    if (filtrosAtivos.regiao.length === 0 && filtrosAtivos.condicao.length === 0) {
         filtradas = embaralharArray(estradas).slice(0, 7);
-    } else {
-        filtradas = estradas.filter(estrada =>
-            filtrosAtivos.every(filtro => estrada.categorias.includes(filtro))
-        );
-        // Não completa com aleatórias se houver filtros ativos
     }
 
     exibirEstradas(filtradas);
@@ -208,6 +227,10 @@ function exibirEstradas(lista) {
         const img = document.createElement('img');
         img.src = estrada.img;
         img.alt = estrada.nome;
+        img.onclick = async () => {
+            const estradaUrl = `estrada/${estrada.nome.toLowerCase().replace('-', '')}.html`;
+            await acessarEstrada(estrada.nome, estradaUrl);
+        };
 
         const btn = document.createElement('button');
         btn.textContent = estrada.nome;
