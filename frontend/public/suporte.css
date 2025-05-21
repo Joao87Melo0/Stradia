@@ -5,6 +5,15 @@ html, body {
     padding: 0;
 }
 
+#imglocal{
+    height: 85px;
+    transition: 0.3s;
+}
+
+.sec-2 #box-suporte4:hover #imglocal{
+    filter: brightness(0) invert(1) !important;
+}
+
 /*Mobile*/
 @media (max-width: 767px){
     main{
