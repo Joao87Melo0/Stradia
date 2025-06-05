@@ -305,6 +305,22 @@ input[type="search"]::-webkit-search-cancel-button {
         height: 100%;
     }
 
+    .condicao button{
+        position: absolute;
+        margin-top: 150px;
+        margin-left: 50px;
+        color: #0124B4;
+        font-weight: 500;
+        padding: 10px 30px;
+        border-radius: 20px;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+
+    .condicao button:hover{
+        opacity: 0.5;
+    }
+
     #footer{
         justify-self: flex-end !important;
     }
