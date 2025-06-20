@@ -9,8 +9,8 @@
         background-size: cover;
         background-position: center top;
         background-repeat: no-repeat;
-        height: 1200px;
-        width: 100%;
+        height: 1250px;
+        width: 100vw;
         margin-top: 70px; 
         display: flex;
         flex-direction: column;
@@ -28,7 +28,6 @@
 
 .titleStradia div{
     width: 78%;
-    margin-right: -15px;
 }
 
 .titleStradia h1{
@@ -127,6 +126,7 @@ main #btn-login{
     align-items: center;
     margin-top: 50%;
     padding-top: 13%;
+    margin-bottom: 200px;
 }
 
 .sobreNos h1{
@@ -148,8 +148,9 @@ main #btn-login{
 
 .text-sobrenos p{
     font-weight: 200;
-    margin: 10px 30px 0px 0px;
+    margin: 10px 40px 0px 0px;
     text-align: justify;
+    line-height: 1.6;
 }
 
 #text-sobrenos-proposito{
