@@ -39,7 +39,8 @@
     font-weight: 500;
     line-height: normal;
     margin-bottom: -0.6em;
-    margin-left: 3px;
+    margin-right: 5px;
+    text-align: center;
 }
 
 .titleStradia h2{
@@ -50,6 +51,7 @@
     font-weight: 600;
     margin-bottom: -0.2em;
     margin-left: -0.03em;
+    text-align: center;
 }
 
 .titleStradia p{
@@ -59,6 +61,7 @@
     font-style: normal;
     font-weight: 100;
     line-height: normal;
+    text-align: center;
 }
 
 main .btns-login{
@@ -66,7 +69,7 @@ main .btns-login{
     justify-content: flex-end;
     width: 250px;
     margin-top: 20px;
-    margin-left: 20px;
+    margin-left: 50px;
 }
 
 main .btn-title{

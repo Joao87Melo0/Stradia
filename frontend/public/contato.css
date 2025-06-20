@@ -15,16 +15,106 @@ a{
     main{
         background-color: aqua;
         height: 100vh;
-        background-image: url('../img/BackgroundHomeMobile.png');
+        background-image: url('../img/BackgroundSuporte.png');
         background-size: cover;
         background-position: center top;
         background-repeat: no-repeat;
-        height: 1200px;
-        width: 120%;
-        margin-top: 70px; 
+        width: 100%;
+        margin-top: 20px; 
         display: flex;
         flex-direction: column;
         background-color: #030b1a;
+    }
+
+    .back{
+        height: 60px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+    
+    .back button{
+        cursor: pointer;
+        border-radius: 50%;
+        background-color: #7885BE73;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 8px;
+        transition: 0.2s;
+    }
+    
+    .back button:hover{
+        background-color: #162B83;
+    }
+    
+    .back img{
+        height: 28px;
+        margin: 7px;
+    }
+
+    main h1{
+        color: white;
+        font-size: 25px;
+        align-self: center;
+        position: absolute;
+        margin-top: 80px;
+    }
+
+    main>section{
+        background-color: #0F1F61;
+        box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
+        display: flex;
+        align-self: center;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        margin-top: 150px;
+        color: white;
+        font-weight: 300;
+        padding: 20px 50px 20px 70px;
+        border-radius: 20px;
+    }
+
+    main>section>div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px;
+    }
+
+    main>section>div>a{
+        background-color: #253DB1;
+        box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.25);
+        padding: 5px 15px 10px 15px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        transition: 0.3s ease-in;
+    }
+
+    main>section>div>a:hover{
+        transform: scale(1.05);
+    }
+
+    main>section>div>a>div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    main>section>div>a>div>img{
+        height: 120px;
+    }
+
+    main>footer{
+        justify-self: flex-end !important;
+    }
+
+    /*footer*/
+    footer{
+        margin-top: auto !important;
+        margin-bottom: 20px !important;
     }
 
 

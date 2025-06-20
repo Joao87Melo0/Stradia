@@ -67,6 +67,22 @@ footer #lineFooter{
 #credits{
     font-size: 10px;
 } 
+footer{
+    font-size: 8px !important;
+    width: 100% !important;
+}
+
+#credits{
+    font-size: 7px !important;
+}
+
+#lineFooter{
+    width: 80% !important;
+}
+
+.text-footer{
+    justify-content: space-around !important;
+}
 }
 
 /*pc hd*/
