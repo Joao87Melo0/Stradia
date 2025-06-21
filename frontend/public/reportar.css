@@ -25,6 +25,7 @@ html, body {
     body{
         height: 100%;
     }
+
     html{
         height: 100%;
     }
@@ -82,26 +83,24 @@ html, body {
     }
 
     main>section textarea {
-    border-radius: 20px;
-    background: rgba(120, 133, 190, 0.45);
-    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
-    width: 350px;
-    height: 400px;
-    flex-shrink: 0;
-    padding: 20px 30px; 
-    color: white;
-    font-size: 16px;
-    resize: none; /* Desabilita o redimensionamento */
-    border: none; /* Remove a borda padrão */
-    outline: none; /* Remove o contorno ao focar */
-    /* Garante que o texto comece no topo e quebre linhas automaticamente */
-    vertical-align: top;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
+        border-radius: 20px;
+        background: rgba(120, 133, 190, 0.45);
+        box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
+        width: 350px;
+        height: 400px;
+        flex-shrink: 0;
+        padding: 20px 30px; 
+        color: white;
+        font-size: 16px;
+        resize: none;
+        border: none; 
+        outline: none; 
+        vertical-align: top;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
     }
 
-    /* Alinha o placeholder no topo */
     main>section textarea::placeholder {
         vertical-align: top;
         color: rgba(255, 255, 255, 0.795);
