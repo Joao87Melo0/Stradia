@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             if (perfilLink) {
-                perfilLink.href = "perfil/index.html";  // Redireciona para o perfil
                 perfilLink.style.display = "block";
             }
 
