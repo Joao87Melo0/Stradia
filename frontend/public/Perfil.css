@@ -111,6 +111,14 @@ button{
         width: 150px !important;
     }
 
+    .circle-perfil img{
+        height: 80px !important;
+        width: 80px !important;
+        position: absolute;
+        bottom: 40px;
+        right: 35px;
+    }
+
     .circle-perfil:hover img{
         filter: blur(2px);
         transition: filter 1s ease;
