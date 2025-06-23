@@ -206,69 +206,110 @@
 /*Tablets*/
 @media (max-width: 1024px) and (min-width: 768px) {
  
-html {
-    scroll-behavior: smooth;
-}  
-
-body{
-    overflow-x: hidden;
-    background-color: #030B1A;
-}
-
-
-main{
-    padding-top: 60px;
-}
-
-header{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
+#logo{
+        margin: 5px 0px 0px 12px;
+        width: 5em !important;
+    }
+    
+    body{
+        overflow-x: hidden;
+        background-color: #030B1A;
+    }
+    
+    
+    main{
+        padding-top: 60px;
+    }
+    
+    header{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #051737;
+        z-index: 1000;
+    }
+    
+.navBarHeader ul{
+    position: absolute;
+    top: 79.74px;
+    right: 0;
+    width: 75vw;
+    height: 100vh;
     background-color: #030F27;
-    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    padding: 100px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in;
 }
+
+.navBarHeader ul.active{
+    transform: translateX(0);
+}
+
+.mobile-menu.active .line1{
+    transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.mobile-menu.active .line2{
+    opacity: 0;
+}
+
+.mobile-menu.active .line3{
+    transform: rotate(45deg) translate(-5px, -7px);
+}
+
+@keyframes navLinkFade {
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.navBarHeader ul>a{
+    text-decoration: none;
+    color: #FFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    opacity: 0;
+}
+
+.mobile-menu{
+    display: block;
+}
+
+.navBarHeader-2metade>a{
+    margin-right: 10px;
+    display: none;
+}
+
 
 .navBarHeader{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    margin: 0px 40px 0px 20px;
 }
 
 .navBarHeader-2metade{
     display: flex;
     width: 50%;
-    justify-content: space-between;
+    justify-content: flex-end !important;
     align-items: center;
 }
 
-#logo{
-    margin-top: 5px;
-    width: 4em;
-}
-
-.navBarHeader ul{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 70%;
-}
-
-.navBarHeader li{
-    background-color: rgba(217, 217, 217, 0.048);
-    padding: 2px 8px;
-    border-radius: 20px;
-    transition: 0.2s;
-}
-
-.navBarHeader li:hover{
-    background-color: rgba(217, 217, 217, 0.151);
-}
 
 .navBarHeader li>img{
-    width: 20px;
+    width: 30px !important;
     margin: 0px 5px 0px 0px;
     align-self: center;
     justify-self: center;
@@ -283,19 +324,11 @@ header{
     width: 18px;
 }
 
-.navBarHeader a{
-    text-decoration: none;
-    color: #FFF;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 300;
-    line-height: normal;
-}
 
 .navBarHeader li{
     display: flex;
-    align-items: center;
+    font-size: 25px;
+    justify-content: center;
 }
 
 #iconPerfil{
