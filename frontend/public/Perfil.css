@@ -24,7 +24,7 @@ button{
         background-position: center top;
         background-repeat: no-repeat;
         width: 100%;
-        margin-top: 20px; 
+        margin-top: 25px; 
         display: flex;
         flex-direction: column;
         background-color: #030b1a;
@@ -215,7 +215,7 @@ button{
     .sair{
         width: 100%;
         display: flex;
-        margin-top: 100px;
+        margin-top: 80px;
         flex-direction: row-reverse;
     }
 
@@ -224,6 +224,7 @@ button{
         display: flex;
         align-items: center;
         justify-content: center;
+        margin-bottom: 45px;
     }
 
     .sair button{
