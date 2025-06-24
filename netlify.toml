@@ -1,0 +1,22 @@
+[build]
+  publish = "./"
+
+[[redirects]]
+  from = "/Home"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/Perfil"
+  to = "/frontend/src/pages/perfil/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/Dashboard"
+  to = "/frontend/src/pages/dashboard/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/am343"
+  to = "/frontend/src/pages/dashboard/estrada/am343.html"
+  status = 200
