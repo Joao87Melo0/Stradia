@@ -387,9 +387,201 @@ footer{
 
 }
 
+/*Tablets maior*/
+@media (max-width: 1300px) and (min-width: 1024px) {
+
+    main{
+        background-color: aqua;
+        height: 100vh;
+        background-image: url('../img/BackgroundHomeMobile.png');
+        background-size: cover;
+        background-position: center top;
+        background-repeat: no-repeat;
+        height: 1250px;
+        width: 100vw;
+        margin-top: 70px; 
+        display: flex;
+        flex-direction: column;
+        background-color: #030b1a;
+    }
+
+/*sec-1*/
+.titleStradia{
+    height: 28%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 14%;
+}
+
+.titleStradia div{
+    width: 55%;
+}
+
+.titleStradia h1{
+    color: #FFF;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Poppins;
+    font-size: 3.7em;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: -0.6em;
+}
+
+.titleStradia h2{
+    color: #2448D7;
+    text-shadow: 0px 4px 6px rgba(0, 34, 255, 0.25);
+    font-family: Poppins;
+    font-size: 7em;
+    font-weight: 600;
+    margin-bottom: -0.2em;
+    margin-left: -0.03em;
+}
+
+.titleStradia p{
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 1.1em;
+    font-style: normal;
+    font-weight: 100;
+    line-height: normal;
+}
+
+main .btns-login{
+    display: flex;
+    justify-content: flex-end;
+    width: 370px;
+    margin-top: 20px;
+}
+
+main .btn-title{
+    width: 140px;
+    height: 50px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    font-size: 1.2em;
+    border-radius: 28px;
+}
+
+main .btn-title img{
+    width: 1.1em;
+    margin-right: 0.5em;
+}
+
+main #btn-register{
+    color: #02135B;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#btn-register:hover{
+    background-color: #0124B4;
+    color: white;
+}
+
+#btn-register img {
+    transition: filter 0.2s;
+    width: 1.5em;
+}
+
+#btn-register:hover img {
+    filter: brightness(0) invert(1);
+}
+
+main #btn-login{
+    color: white;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: #0124B4;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#btn-login img {
+    transition: filter 0.3s ease;
+}
+
+#btn-login:hover img {
+    filter: brightness(0) saturate(100%) invert(8%) sepia(98%) saturate(700%) hue-rotate(190deg) brightness(100%) contrast(95%);
+}
+
+#btn-login:hover{
+    background-color: #fff;
+    color: #02135B;
+    font-weight: 600;
+}
+
+/*sec-2*/
+.sobreNos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50%;
+    padding-top: 20%;
+    margin-bottom: 200px;
+}
+
+.sobreNos h1{
+    margin-bottom: 0.8em;
+    color: white;
+    text-shadow: 0px 4px 6px rgba(0, 34, 255, 0.25);
+    text-align: center;
+    font-family: Poppins;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.sobreNos .text-sobrenos{
+    display: flex;
+    color: white;
+}
+
+.text-sobrenos p{
+    font-weight: 200;
+    margin: 10px 40px 0px 0px;
+    text-align: justify;
+    line-height: 1.6;
+}
+
+#text-sobrenos-proposito{
+    margin-top: 4em;
+}
+
+.sobreNos .arrow-sobrenos img{
+    height: 40px;
+}
+
+.arrow-sobrenos{
+    margin-left: 10px;
+}
+
+.sobreNos h2{
+    height: 40px;
+    vertical-align: center;
+    font-weight: 400;
+}
+
+footer{
+    margin-top: 600px;
+    font-size: 8px !important;
+    width: 100% !important;
+}
+
+.text-footer{
+    justify-content: space-around !important;
+}
+
+}
+
 
 /*Pc hd*/
-@media (max-width: 1700px) and (min-width: 1024px) {
+@media (max-width: 1700px) and (min-width: 1300px) {
     main{
         background-image: url('../img/backgroundHomeNew.png');
         background-size: cover;

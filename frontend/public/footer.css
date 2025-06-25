@@ -103,7 +103,7 @@ footer{
 .text-footer{
     width: 80% !important;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between !important;
 }
 
 .text-footer>div{
@@ -119,7 +119,7 @@ footer{
 
 .text-footer a{
     color: white;
-    font-size: 10px;
+    font-size: 12px;
     text-decoration: none;
     transition: 0.2s;
     text-align: center;
@@ -167,10 +167,6 @@ footer{
 #lineFooter{
     width: 60% !important;
 }
-
-.text-footer{
-    justify-content: space-around !important;
-}   
 }
 
 /*pc hd*/
