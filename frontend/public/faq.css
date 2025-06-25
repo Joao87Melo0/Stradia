@@ -238,23 +238,468 @@ html, body {
 
 /*Tablets*/
 @media (max-width: 1024px) and (min-width: 768px) {
-    main {
-        background-image: url('../img/BackgroundHome.png');
+    main{
+        background-color: aqua;
+        height: 100vh;
+        background-image: url('../img/BackgroundSuporte.png');
         background-size: cover;
         background-position: center top;
         background-repeat: no-repeat;
-        height: 1700px;
         width: 100%;
-        margin-top: 70px; 
+        margin-top: 20px; 
         display: flex;
         flex-direction: column;
+        background-color: #030b1a;
     }
 
+    body, html {
+        height: 100%;
+    }
+
+    .back{
+        height: 60px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
     
+    .back button{
+        cursor: pointer;
+        border-radius: 50%;
+        background-color: #7885BE73;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 8px;
+        transition: 0.2s;
+    }
+    
+    .back button:hover{
+        background-color: #162B83;
+    }
+    
+    .back img{
+        height: 28px;
+        margin: 7px;
+    }
+
+    #faq-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        position: relative;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    #faq-container h1 {
+        color: white;
+        margin-bottom: 10px; /* Removido o espaçamento inferior */
+        font-size: 30px;
+        margin-top: 50px;
+        margin-bottom: 30px;
+    }
+
+    #faq-container .buttons {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .buttons button {
+        cursor: pointer;
+        width: 100px;
+        height: 32px;
+        background-color: #ffffffc4;
+        filter: drop-shadow(0px 4px 15px rgba(0, 0, 0, 0.25));
+        color: #0F1F61;
+        text-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+        font-family: Poppins;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        transition: 0.3s;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #especial {
+        background-color: #0F1F61;
+        color: white;
+    }
+
+    #especial img{
+        filter: none;
+    }
+
+    .buttons button:hover {
+        background-color: #48537E;
+        color: white;
+    }
+
+    .buttons button:hover img{
+        filter: none;
+    }
+
+    .buttons button img {
+        height: 15px;
+        margin-right: 4px;
+        filter: brightness(0) saturate(100%) invert(14%) sepia(36%) saturate(746%) hue-rotate(197deg) brightness(90%) contrast(95%);
+        transition: 0.3s;
+    }
+
+    .faq {
+        width: 90%;
+        background-color: #ffffffc4;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        transition: all 0.3s ease-in-out;
+        position: relative;
+        opacity: 1;
+        transform: scale(1);
+        margin-bottom: 20px; /* Removido o espaçamento inferior */
+    }
+
+    .faq-question {
+        width: 100%;
+        background: none;
+        border: none;
+        color: #0F1F61;
+        font-size: 12px;
+        padding: 10px;
+        text-align: left;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background 0.3s ease-in-out;
+        margin-top: 0; /* Removido o espaçamento superior */
+        margin-bottom: 0; /* Removido o espaçamento inferior */
+    }
+
+    .faq-question:hover {
+        background-color: #0F1F61;
+        color: white;
+    }
+
+    .faq-answer {
+        padding: 0 20px;
+        color: white;
+        background-color: #0B143E;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 1.2s ease, opacity 1.2s ease, margin-top 0.5s ease;
+        margin-top: 0;
+    }
+
+    .faq-answer p{
+        font-size: 12px;
+    }
+
+    /* Ícones de seta verticais */
+    .faq-question::after {
+        content: "˅";
+        font-size: 14px;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .faq.open .faq-question::after {
+        content: "˄";
+        transform: rotate(0deg);
+    }
+
+    .faq.open .faq-answer {
+        animation: expand 1.2s forwards;
+        padding: 10px;
+    }
+
+    .faq.closing .faq-answer {
+        animation: collapse 1.2s forwards;
+        margin-top: 0;
+    }
+
+    @keyframes expand {
+        from {
+            max-height: 0;
+            opacity: 0;
+        }
+        to {
+            max-height: 500px;
+            opacity: 1;
+        }
+    }
+
+    @keyframes collapse {
+        from {
+            max-height: 500px;
+            opacity: 1;
+        }
+        to {
+            max-height: 0;
+            opacity: 0;
+        }
+    }
+
+    .faq:not(.open) {
+        opacity: 1;
+        pointer-events: all;
+        transform: scale(1);
+    }
+
+    .faq-container.open .faq:not(.open) {
+        opacity: 0;
+        pointer-events: none;
+        transform: scale(0.9);
+    }
+
+    /*footer*/
+    footer{
+        margin-top: auto !important;
+        margin-bottom: 20px !important;
+    }
+
+}
+
+@media (max-width: 1300px) and (min-width: 1024px){
+
+    main{
+        background-color: aqua;
+        height: 100vh;
+        background-image: url('../img/BackgroundSuporte.png');
+        background-size: cover;
+        background-position: center top;
+        background-repeat: no-repeat;
+        width: 100%;
+        margin-top: 20px; 
+        display: flex;
+        flex-direction: column;
+        background-color: #030b1a;
+    }
+
+    body, html {
+        height: 100%;
+    }
+
+    .back{
+        height: 60px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+    
+    .back button{
+        cursor: pointer;
+        border-radius: 50%;
+        background-color: #7885BE73;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 8px;
+        transition: 0.2s;
+    }
+    
+    .back button:hover{
+        background-color: #162B83;
+    }
+    
+    .back img{
+        height: 28px;
+        margin: 7px;
+    }
+
+    #faq-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        position: relative;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    #faq-container h1 {
+        color: white;
+        margin-bottom: 10px; /* Removido o espaçamento inferior */
+        font-size: 35px;
+        margin-top: 70px;
+        margin-bottom: 30px;
+    }
+
+    #faq-container .buttons {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .buttons button {
+        cursor: pointer;
+        width: 120px;
+        height: 32px;
+        background-color: #ffffffc4;
+        filter: drop-shadow(0px 4px 15px rgba(0, 0, 0, 0.25));
+        color: #0F1F61;
+        text-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+        font-family: Poppins;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        transition: 0.3s;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #especial {
+        background-color: #0F1F61;
+        color: white;
+    }
+
+    #especial img{
+        filter: none;
+    }
+
+    .buttons button:hover {
+        background-color: #48537E;
+        color: white;
+    }
+
+    .buttons button:hover img{
+        filter: none;
+    }
+
+    .buttons button img {
+        height: 15px;
+        margin-right: 4px;
+        filter: brightness(0) saturate(100%) invert(14%) sepia(36%) saturate(746%) hue-rotate(197deg) brightness(90%) contrast(95%);
+        transition: 0.3s;
+    }
+
+    .faq {
+        width: 90%;
+        background-color: #ffffffc4;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        transition: all 0.3s ease-in-out;
+        position: relative;
+        opacity: 1;
+        transform: scale(1);
+        margin-bottom: 20px; /* Removido o espaçamento inferior */
+    }
+
+    .faq-question {
+        width: 100%;
+        background: none;
+        border: none;
+        color: #0F1F61;
+        font-size: 16px;
+        padding: 15px;
+        text-align: left;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background 0.3s ease-in-out;
+        margin-top: 0; /* Removido o espaçamento superior */
+        margin-bottom: 0; /* Removido o espaçamento inferior */
+    }
+
+    .faq-question:hover {
+        background-color: #0F1F61;
+        color: white;
+    }
+
+    .faq-answer {
+        padding: 0 20px;
+        color: white;
+        background-color: #0B143E;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 1.2s ease, opacity 1.2s ease, margin-top 0.5s ease;
+        margin-top: 0;
+    }
+
+    .faq-answer p{
+        font-size: 16px;
+    }
+
+    /* Ícones de seta verticais */
+    .faq-question::after {
+        content: "˅";
+        font-size: 14px;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .faq.open .faq-question::after {
+        content: "˄";
+        transform: rotate(0deg);
+    }
+
+    .faq.open .faq-answer {
+        animation: expand 1.2s forwards;
+        padding: 10px;
+    }
+
+    .faq.closing .faq-answer {
+        animation: collapse 1.2s forwards;
+        margin-top: 0;
+    }
+
+    @keyframes expand {
+        from {
+            max-height: 0;
+            opacity: 0;
+        }
+        to {
+            max-height: 500px;
+            opacity: 1;
+        }
+    }
+
+    @keyframes collapse {
+        from {
+            max-height: 500px;
+            opacity: 1;
+        }
+        to {
+            max-height: 0;
+            opacity: 0;
+        }
+    }
+
+    .faq:not(.open) {
+        opacity: 1;
+        pointer-events: all;
+        transform: scale(1);
+    }
+
+    .faq-container.open .faq:not(.open) {
+        opacity: 0;
+        pointer-events: none;
+        transform: scale(0.9);
+    }
+
+    /*footer*/
+    footer{
+        margin-top: auto !important;
+        margin-bottom: 20px !important;
+    }
+
 }
 
 /*Pc hd*/
-@media (max-width: 1700px) and (min-width: 1024px) {
+@media (max-width: 1700px) and (min-width: 1300px) {
     main {
         background-image: url('../img/BackgroundSuporte.png');
         background-size: cover;
