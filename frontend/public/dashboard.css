@@ -340,15 +340,322 @@ input[type="search"]::-webkit-search-cancel-button {
 
 }
 
+/*Mobile 2*/
+@media (min-width: 767px) and (min-height: 1200px){
+    main{
+        background-color: aqua;
+        height: 100vh;
+        background-image: url('../img/BackgroundSuporte.png');
+        background-size: cover;
+        background-position: center top;
+        background-repeat: no-repeat;
+        width: 100%;
+        margin-top: 20px; 
+        display: flex;
+        flex-direction: column;
+        background-color: #030b1a;
+        align-items: center;
+    }
+
+    body{
+        height: 100%;
+    }
+    html{
+        height: 100%;
+    }
+
+    main>h1{
+        color: white;
+        font-size: 60px;
+        margin-top: 80px;
+    }
+
+    .sec-1-dash button{
+        cursor: pointer;
+    }
+    
+    main .search{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 40px;
+        width: 100%;
+    }
+    .search input{
+        width: 85vw;
+        height: 60px;
+        border-radius: 50px;
+        background: rgba(120, 133, 190, 0.45);
+        box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.25);
+        padding-left: 25px;
+        font-size: 22px;
+        color: white;
+    }
+
+    .search input::placeholder{
+        color: rgba(255, 255, 255, 0.50);
+    }
+
+    .search input:focus{
+        outline: none;
+    }
+    
+    .search input:-webkit-autofill,
+    .search input:-webkit-autofill:hover,
+    .search input:-webkit-autofill:focus {
+        background-color: #7885BE73 !important;
+        outline: none;
+        -webkit-text-fill-color: white !important;  /* Mantém a cor do texto */
+        transition: background-color 5000s ease-in-out 0s; /* Evita mudança repentina de cor */
+    }
+
+    main .sec-1-dash{
+        margin-top: 30px;
+        margin-bottom: 50px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    main .search button{
+        margin-top: 40px;
+    }
+
+    main .sec-1-dash button{
+        background-color: #ffffffc4;
+        display: flex;
+        color: #0124B4;
+        justify-content: center;
+        align-items: center;
+        padding: 25px 20px;
+        height: 30px;
+        border-radius: 5px;
+        font-size: 30px;
+        transition: transform 0.3s ease;
+    }
+    
+    main .sec-1-dash button img{
+        height: 20px;
+        filter: brightness(0) saturate(100%) invert(14%) sepia(36%) saturate(746%) hue-rotate(197deg) brightness(90%) contrast(95%);
+    }
+
+    
+    main .sec-2-recomenda{
+        width: 100%;
+        height: 450px;
+        margin-bottom: 100px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    main .sec-2-recomenda h3{
+        color: white;
+        margin: 0px 0px 10px 15px;
+        font-size: 30px;
+    }
+
+    main .recomendaEstrada{
+        background-color: #0F1F61;
+        height: 100%;
+        color: white;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    main .sec-2-recomenda .estrada{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0px 30px 0px 30px;
+    }
+    
+    main .sec-2-recomenda .recomendaEstrada img {
+        width: 350px;
+        height: 250px;
+        border-radius: 10px;
+    }
+
+    main .sec-2-recomenda .recomendaEstrada button {
+        background-color: #ffffffc4;
+        color: #0124B4;
+        box-shadow: 0px 4px 6px 0px rgba(0, 0, 0, 0.25);
+        font-size: 12px;
+        padding: 5px 20px;
+        border-radius: 5px;
+        margin-top: 10px;
+        text-align: center;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    main .sec-2-recomenda .arrows {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .arrows button{
+        font-size: 24px !important; 
+        padding: 0px 0px 0px 0px;
+        margin: 0px 15px;
+    }
+
+    main .sec-2-recomenda .arrow-left, .arrow-right {
+        background-color: rgba(0, 0, 0, 0.3);
+        color: white;
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    main .sec-2-recomenda .arrow-left:hover, .arrow-right:hover, .recomendaEstrada button:hover, button:hover{
+        transform: scale(1.1);
+    }
+
+    main .sec-2-recomenda .arrow-left {
+        left: 10px;
+    }
+
+    main .sec-2-recomenda .arrow-right {
+        right: 10px;
+    }
+
+    .estradas-container {
+        display: flex;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        padding: 20px 0;
+    }
+
+    /*resultado barra de pesquisa*/
+    .result-pesquisa{
+        width: 90%;
+        border-radius: 15px;
+        background: #0F1F61;
+        box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        align-self: center;
+        justify-self: center;
+        padding: 10px;
+        margin-top: 50px;
+        position: absolute;
+        z-index: 1000;
+    }
+
+    .bloco-pesquisa{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.555);
+        padding: 15px 0px;
+    }
+
+    .bloco-pesquisa button{
+        width: 100px;
+        height: 30px;
+        border-radius: 10px;
+        font-size: 16px;
+        color: #0F1F61;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .bloco-pesquisa button:hover{
+        background-color: #bebebe;
+    }
+
+    .info-pesquisa{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .info-pesquisa h2{
+        font-weight: 500;
+        font-size: 20px;
+        color: white;
+    }
+
+    .info-pesquisa img{
+        height: 40px;
+        width: 40px;
+        border-radius: 5px;
+    }
+
+    .info-pesquisa div{
+        color: white;
+        margin-left: 10px;
+        height: 100%;
+    }
+
+    /*Filtros*/
+    .filtros{
+        width:70%;
+        height: 300px;
+        border-radius: 15px;
+        background: #0F1F61;
+        box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.25);
+        margin-top: 100px;
+        position: absolute;
+        z-index: 1000;
+    }
+
+    .filtros>div{
+        display: flex;
+        flex-direction: column;
+        margin: 20px;
+    }
+
+    .filtros>div>div{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .filtros h3{
+        color: white;
+        font-weight: 400;
+    }
+
+    .filtros .escolha{
+        background-color: rgba(255, 255, 255, 0);
+        color: white;
+        border: 1px solid rgba(134, 134, 134, 0.418);
+        margin: 5px;
+    }
+
+    .filtros .escolha:active{
+        background-color: rgba(255, 255, 255, 0.247);
+    }
+
+    /*footer*/
+    footer{
+        margin-top: auto !important;
+        margin-bottom: 20px !important;
+    }
+
+}
+
 /*Tablets*/
-@media (max-width: 1024px) and (min-width: 768px) {
+@media (max-width: 1024px) and (min-width: 768px) and (max-height: 1200px){
 
     main {
         background-image: url('../img/BackgroundSuporte.png');
         background-size: cover; /* Ajusta sem distorção */
         background-position: center;
         background-repeat: no-repeat;
-        height: 100vh;
+        min-height: 1024px;
         width: 100%;
         margin-top: 0px;
         display: flex;
