@@ -114,7 +114,7 @@ h2{
         background-size: cover; /* Ajusta sem distorção */
         background-position: center;
         background-repeat: no-repeat;
-        height: 100vh;
+        min-height: 1024px;
         width: 100%;
         margin-top: 40px;
         display: flex;

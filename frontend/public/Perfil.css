@@ -253,7 +253,7 @@ button{
 
     main{
         background-color: aqua;
-        height: 100vh;
+        min-height: 1024px;
         background-image: url('../img/BackgroundSuporte.png');
         background-size: cover;
         background-position: center top;
