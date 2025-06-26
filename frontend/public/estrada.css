@@ -322,6 +322,97 @@ input[type="search"]::-webkit-search-cancel-button {
         margin-top: auto !important;
         margin-bottom: 20px !important;
     }
+
+    /*Report*/
+
+    .reportar-problema {
+    width: 80%;
+    max-width: 600px;
+    height: 450px;
+    background: #0F1F61;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    padding: 20px;
+    position: absolute;
+    margin-top: 550px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    display: flex;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-direction: column;
+    gap: 20px;
+    }
+
+    .reportar-problema h3 {
+    color: white;
+    font-weight: 400;
+    margin-bottom: 5px;
+    font-size: 16px;
+    }
+
+    .reportar-problema input,
+    .reportar-problema textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    resize: none;
+    background-color: #ebebebf6;
+    }
+
+    .reportar-problema textarea {
+    min-height: 100px;
+    }
+
+    .reportar-problema button {
+    align-self: flex-end;
+    background-color: #ffffffc4;
+    color: #0124B4;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.2s;
+    }
+
+    .reportar-problema button:hover {
+    transform: scale(1.05);
+    }
+
+    #kmProblema{
+        margin-bottom: 30px;
+    }
+
+    #descricaoProblema{
+        margin-bottom: 40px;
+    }
+
+    #fast{
+        margin-top: 40px;
+    }
+
+    .btn-fechar {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    background: transparent;
+    color: white;
+    font-size: 13px;
+    padding: 5px 10px!important;
+    border-radius: 50% !important;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s;
+    }
+
+    .btn-fechar:hover {
+    transform: scale(1.2);
+    }
 }
 
 /*Tablets*/
@@ -610,6 +701,81 @@ input[type="search"]::-webkit-search-cancel-button {
     footer{
         margin-top: auto !important;
         margin-bottom: 20px !important;
+    }
+
+    /*Report*/
+
+    .reportar-problema {
+    width: 80%;
+    max-width: 500px;
+    background: #0F1F61;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    padding: 20px;
+    position: absolute;
+    margin-top: 670px;
+    margin-left: 250px;
+    transform: translateX(-50%);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    }
+
+    .reportar-problema h3 {
+    color: white;
+    font-weight: 400;
+    margin-bottom: 5px;
+    }
+
+    .reportar-problema input,
+    .reportar-problema textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    resize: none;
+    background-color: #ebebebf6;
+    }
+
+    .reportar-problema textarea {
+    min-height: 100px;
+    }
+
+    .reportar-problema button {
+    align-self: flex-end;
+    background-color: #ffffffc4;
+    color: #0124B4;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.2s;
+    }
+
+    .reportar-problema button:hover {
+    transform: scale(1.05);
+    }
+
+    .btn-fechar {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    background: transparent;
+    color: white;
+    font-size: 20px;
+    padding: 5px 13px!important;
+    border-radius: 50% !important;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s;
+    }
+
+    .btn-fechar:hover {
+    transform: scale(1.2);
     }
 
 }
@@ -902,6 +1068,81 @@ input[type="search"]::-webkit-search-cancel-button {
         margin-bottom: 20px !important;
     }
 
+    /*Report*/
+
+    .reportar-problema {
+    width: 80%;
+    max-width: 500px;
+    background: #0F1F61;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    padding: 20px;
+    position: absolute;
+    margin-top: 670px;
+    margin-left: 100px;
+    transform: translateX(-50%);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    }
+
+    .reportar-problema h3 {
+    color: white;
+    font-weight: 400;
+    margin-bottom: 5px;
+    }
+
+    .reportar-problema input,
+    .reportar-problema textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    resize: none;
+    background-color: #ebebebf6;
+    }
+
+    .reportar-problema textarea {
+    min-height: 100px;
+    }
+
+    .reportar-problema button {
+    align-self: flex-end;
+    background-color: #ffffffc4;
+    color: #0124B4;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.2s;
+    }
+
+    .reportar-problema button:hover {
+    transform: scale(1.05);
+    }
+
+    .btn-fechar {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    background: transparent;
+    color: white;
+    font-size: 20px;
+    padding: 5px 13px!important;
+    border-radius: 50% !important;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s;
+    }
+
+    .btn-fechar:hover {
+    transform: scale(1.2);
+    }
+
 }
 
 /*Pc hd*/
@@ -1174,6 +1415,81 @@ input[type="search"]::-webkit-search-cancel-button {
     #footer{
         justify-self: flex-end !important;
     }
+
+    /*Report*/
+
+    .reportar-problema {
+    width: 80%;
+    max-width: 600px;
+    background: #0F1F61;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    padding: 20px;
+    position: absolute;
+    margin-top: 640px;
+    margin-right: 100px;
+    transform: translateX(-50%);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    }
+
+    .reportar-problema h3 {
+    color: white;
+    font-weight: 400;
+    margin-bottom: 5px;
+    }
+
+    .reportar-problema input,
+    .reportar-problema textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    resize: none;
+    background-color: #ebebebf6;
+    }
+
+    .reportar-problema textarea {
+    min-height: 100px;
+    }
+
+    .reportar-problema button {
+    align-self: flex-end;
+    background-color: #ffffffc4;
+    color: #0124B4;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.2s;
+    }
+
+    .reportar-problema button:hover {
+    transform: scale(1.05);
+    }
+
+    .btn-fechar {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    background: transparent;
+    color: white;
+    font-size: 20px;
+    padding: 5px 13px!important;
+    border-radius: 50% !important;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s;
+    }
+
+    .btn-fechar:hover {
+    transform: scale(1.2);
+    }
 }
 
 /*Pc full hd*/
@@ -1427,7 +1743,99 @@ input[type="search"]::-webkit-search-cancel-button {
         height: 100%;
     }
 
+    .condicao button{
+        position: absolute;
+        margin-top: 150px;
+        margin-left: 120px;
+        color: #0124B4;
+        font-weight: 500;
+        padding: 10px 30px;
+        border-radius: 20px;
+        transition: 0.3s;
+        cursor: pointer;
+    }
+
+    .condicao button:hover{
+        opacity: 0.5;
+    }
+
     #footer{
         justify-self: flex-end !important;
     }
+
+    /*Report*/
+
+    .reportar-problema {
+    width: 80%;
+    max-width: 600px;
+    background: #0F1F61;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.25);
+    border-radius: 15px;
+    padding: 20px;
+    position: absolute;
+    margin-top: 690px;
+    margin-right: 200px;
+    transform: translateX(-50%);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    }
+
+    .reportar-problema h3 {
+    color: white;
+    font-weight: 400;
+    margin-bottom: 5px;
+    }
+
+    .reportar-problema input,
+    .reportar-problema textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    resize: none;
+    background-color: #ebebebf6;
+    }
+
+    .reportar-problema textarea {
+    min-height: 100px;
+    }
+
+    .reportar-problema button {
+    align-self: flex-end;
+    background-color: #ffffffc4;
+    color: #0124B4;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.2s;
+    }
+
+    .reportar-problema button:hover {
+    transform: scale(1.05);
+    }
+
+    .btn-fechar {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    background: transparent;
+    color: white;
+    font-size: 20px;
+    padding: 5px 13px!important;
+    border-radius: 50% !important;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s;
+    }
+
+    .btn-fechar:hover {
+    transform: scale(1.2);
+    }
+
 }
