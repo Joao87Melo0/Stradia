@@ -37,7 +37,7 @@ input[type="search"]::-webkit-search-cancel-button {
 @media (max-width: 767px){
     main{
         background-color: aqua;
-        height: 100vh;
+        height: 100000px;
         background-image: url('../img/BackgroundSuporte.png');
         background-size: cover;
         background-position: center top;
