@@ -160,7 +160,7 @@ main section>button:hover{
         background-size: cover; /* Ajusta sem distorção */
         background-position: center;
         background-repeat: no-repeat;
-        min-height: 1024px;
+        height: 100%;
         width: 100%;
         margin-top: 40px;
         display: flex;
