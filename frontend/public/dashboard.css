@@ -348,7 +348,7 @@ input[type="search"]::-webkit-search-cancel-button {
         background-size: cover; /* Ajusta sem distorção */
         background-position: center;
         background-repeat: no-repeat;
-        height: 100%;
+        height: 1500;
         width: 100%;
         margin-top: 0px;
         display: flex;
