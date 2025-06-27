@@ -124,6 +124,7 @@ abaReport.innerHTML = `
     <textarea id="descricaoProblema" placeholder="Descreva o problema..."></textarea>
   </div>
   <button id="enviarReportBtn">Enviar Reporte</button>
+  <button onclick="location.href='../../problemas/index.html'" style="margin-top: 10px;">Visualizar Reportes</button>
 `;
 
 const container = document.querySelector("main");
